@@ -54,7 +54,7 @@ public class Attendance extends Tasks{
 
 
     @Override
-    public int energyChange(MrKalisz kalisz){
+    public int energyChange(MrKalisz kalisz){ //energyChange takes in a MrKalisz object
         return kalisz.getEnergy() - this.energyCost;
     }
     

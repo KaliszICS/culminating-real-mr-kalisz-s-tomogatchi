@@ -2,16 +2,16 @@ public class Student implements Comparable<Student>{
     private String firstName;
     private String lastName;
     private String studentNumber;
-    private int grade;
+    private int mark;
     private int volume;
     private String present;
 
     //constructor for the students?
-    public Student(String firstName, String lastName, String studentNumber, int grade, int volume, String present){
+    public Student(String firstName, String lastName, String studentNumber, int mark, int volume, String present){
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
-        this.grade = grade;
+        this.mark = mark;
         this.volume = volume;
         this.present = present;
     }
@@ -35,8 +35,8 @@ public class Student implements Comparable<Student>{
         return this.studentNumber;
     }
 
-    public int getGrade(){
-        return this.grade;
+    public int getMark(){
+        return this.mark;
     }
 
     public int getVolume(){
