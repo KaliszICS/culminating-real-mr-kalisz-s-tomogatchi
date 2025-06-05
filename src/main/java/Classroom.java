@@ -1,14 +1,30 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 public class Classroom{
     //instance variables
     private Attendance attendance;
     private Scanner input;
-
-    Student[][] seatingChart = new Student[][] {
-            {new Student("Lily", "You", "Present"), new Student("Yu-Yen", "Shen", "Present")},
-            {new Student("Jathav", "Puvirajan", "Absent"), new Student("Yaseman", "Nikoo", "Present")}
+    String[] fNames = new String[] {
+        "Yaseman", "Yu-Yen", "Lily", "Jathav", "Richard", "Aarooran", "Johnathan", "Justin", "Arvin", "Raymond", "Aathi", 
+        "Mayuran", "Jackie", "Anastasia", "Elliot", "Jeffery", "Bojan", "Levon", "Safiya", "Rohit"
     };
+    String[] lNames = new String[] {
+        "Nikoo", "Shen", "You", "Puvirajan", "Gao", "Anakan", "Zhao", "Chu", "Deng", "Zeng", "Thavachselvan", 
+        "Smith", "Chan", "Liacos", "Chen", "Qiu", "Shepered", "Alexanian", "Haider", "Rajesengar"
+    };
+    String[] prescence = new String[] {"Present", "Absent"};
+    int rows = 2, columns = 8;
+    Student[][] seatingChart = new Student[rows][columns];
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; i < columns; i++){  
+            Random rand = new Random();
+            int firstName = rand.nextInt(20);
+            int lastName = rand.nextInt(20);
+            int present = rand.nextInt(2);
+            Student student = new Student(fNames[firstName], lNames[lastName], prescence[present]);
+        }
+    }
 
     ArrayList<Student> studentList = new ArrayList<>();
     ArrayList<Student> studentsPresent = new ArrayList<>();
