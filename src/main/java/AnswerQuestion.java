@@ -43,28 +43,3 @@ public class AnswerQuestion extends Tasks{
     }
     
 } */
-
-//not finish yet
-class AnswerQuestion extends Task {
-    protected int energyCost;
-    private int volume;
-    private int countAnswerTime;
-
-    public String checkVolume(int volume){
-        this.volume = volume;
-        if (this.volume < 10) {
-            return "Sorry say that again?";
-            countAnswerTime++;
-            checkVolume();
-        } else {
-            return "What did I just say?";
-            countAnswerTime++;
-        }
-    }
-
-    public void energyChange(){
-        if (countAnswerTime >= 3){
-            energy = energy - energyCost;
-        }
-    }
-}
