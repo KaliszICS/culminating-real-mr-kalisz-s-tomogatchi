@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 public class Classroom{
     //instance variables
     private Attendance attendance;
@@ -14,22 +14,26 @@ public class Classroom{
         "Smith", "Chan", "Liacos", "Chen", "Qiu", "Shepered", "Alexanian", "Haider", "Rajesengar"
     };
     String[] prescence = new String[] {"Present", "Absent"};
-    int rows = 2, columns = 8;
+    int rows = 2; 
+    int columns = 8;
     Student[][] seatingChart = new Student[rows][columns];
-    for(int i = 0; i < rows; i++){
+    
+    
+
+    ArrayList<Student> studentList = new ArrayList<>();
+    ArrayList<Student> studentsPresent = new ArrayList<>();
+
+    public Classroom(Scanner input){
+        for(int i = 0; i < rows; i++){
         for(int j = 0; i < columns; i++){  
             Random rand = new Random();
             int firstName = rand.nextInt(20);
             int lastName = rand.nextInt(20);
             int present = rand.nextInt(2);
             Student student = new Student(fNames[firstName], lNames[lastName], prescence[present]);
+            seatingChart[i][j] = student;
+            }  
         }
-    }
-
-    ArrayList<Student> studentList = new ArrayList<>();
-    ArrayList<Student> studentsPresent = new ArrayList<>();
-
-    public Classroom(Scanner input){
         this.attendance = new Attendance(seatingChart, studentList, studentsPresent);
         this.input = input;
     }
