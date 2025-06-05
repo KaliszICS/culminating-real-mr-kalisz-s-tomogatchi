@@ -9,7 +9,7 @@ public class MrKalisz{
     public MrKalisz(){
         this.school = new ArrayList<>();
         this.energy = 100;
-        this.firstName = "James";
+k        this.firstName = "James";
         this.lastName = "Kalisz";
     }
 
