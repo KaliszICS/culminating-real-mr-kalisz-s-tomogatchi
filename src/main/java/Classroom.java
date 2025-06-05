@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-public class Classroom{
+import java.util.Random;
+public class Classroom extends Room{
     //instance variables
     private Attendance attendance;
     private Scanner input;
