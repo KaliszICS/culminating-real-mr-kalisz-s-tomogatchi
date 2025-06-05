@@ -1,5 +1,5 @@
 abstract class Tasks{
-    protected int energyCost; //prob dont need this and tasks can be an interface?
+    protected int energyCost;
     abstract boolean checkAnswer();
-    abstract int energyChange();
+    abstract int energyChange(MrKalisz kalisz); //need to be able to access his energy level each time we change the energy so we need to pass a kalisz object/class
 }
