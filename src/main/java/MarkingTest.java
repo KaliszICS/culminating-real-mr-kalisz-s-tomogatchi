@@ -5,8 +5,8 @@ public class MarkingTest extends Tasks{
    private String testAnswer;
    private Scanner input;
    public MarkingTest(String studentAnswer, String testAnswer, Scanner input){
-    this.studentAnswers=studentAnswer;
-    this.testAnswer=testAnswer;
+    this.studentAnswer = studentAnswer;
+    this.testAnswer = testAnswer;
     this.input = input;
     this.energyCost=10;
    }
@@ -28,7 +28,7 @@ public class MarkingTest extends Tasks{
         this.testAnswer=testAnswer;
    }
    public void setInput(String input){
-    this.input=input;
+    this.input = input;
    }
     public int findRightAnswers(){
         this.testAnswer=this.testAnswer.replaceAll("\\s+","");
