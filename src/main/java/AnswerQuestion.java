@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import java.util.Random;
-=======
-public class AnswerQuestion{
-    
-}
 
-/*import java.util.Random;
->>>>>>> b1bddf1 (a lot of changes)
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -46,10 +40,8 @@ public class AnswerQuestion extends Tasks{
     public int energyChange(){
         return 0;
     }
-<<<<<<< HEAD
+
     @Override
-=======
->>>>>>> d88aaa1 (yuyen)
     public boolean checkAnswer(){
         return false;
     }
