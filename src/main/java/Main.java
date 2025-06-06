@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 public class Main {
 	int numOfWins;
 	public static void main(String args[]) {
@@ -47,7 +48,7 @@ public class Main {
 						break;
 					   }
 					}
-					if(kalisz.getEnergy() < 0){
+					if(kalisz.getEnergy() <= 0){
 						DelayText.print("Energy is 0, you have lost the game!", 2000);
 						inClassroom = false;
 						gameStart = false;
@@ -64,7 +65,7 @@ public class Main {
 
 			while(inTechCom){
 				TechCom techcom = new TechCom(in);
-				DelayText.print("\nHere's the list of tasks to do in Tech Committee, you get choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 5 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 5000);
+				DelayText.print("\nHere's the list of tasks to do in Tech Committee, you get choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 10 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 5000);
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -113,5 +114,27 @@ public class Main {
 			
 
 		}
-		
+
+	public static int getWins(){
+		//create a fileWriter
+		FileReader inputStream = null;
+		int num = 0;
+		try {
+			inputStream = new FileReader("winsFile.txt");
+			int c;
+			String numStr = "";
+			while((c = inputStream.read()) != -1){
+				numStr = numStr + (char)c;
+				num = Integer.parseInt(numStr);
+			}
+		} catch (IOException e){
+			System.out.println(e);
+		} finally {
+			if (inputStream != null) { //close the file, if its open
+				inputStream.close();
+			}
+		}
+		return num;
+	}
 }
+

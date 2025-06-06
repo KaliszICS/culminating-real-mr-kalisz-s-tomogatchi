@@ -26,7 +26,7 @@ public class TechCom{
     }
 
     public void projectorCheckTask(){
-        projector.setInput(input);
+        //projector.setInput(input);
     }   
 
     public void componentCheckTask(){
