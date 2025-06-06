@@ -19,7 +19,7 @@ public class AnswerQuestion extends Tasks{
     Student student = new Student("Bob", "Ross", "342404090", 12, 5, "Present");
 
 
-    public String answerQuestion(String[] questionArr, Student student, String[] answerArr, int energyCost){
+    public int answerQuestion(String[] questionArr, Student student, String[] answerArr, int energyCost){
         Scanner in = new Scanner(System.in);
         //randomize questions asked by student using an array of questions and random number
         Random num = new Random();
@@ -42,19 +42,21 @@ public class AnswerQuestion extends Tasks{
     }
 
     @Override
+<<<<<<< HEAD
     public int energyChange(){
         return 0;
     }
 <<<<<<< HEAD
     @Override
+=======
+>>>>>>> d88aaa1 (yuyen)
     public boolean checkAnswer(){
         return false;
     }
 
     @Override
-    int energyChange(MrKalisz kalisz) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'energyChange'");
+    public int energyChange(MrKalisz kalisz) {
+        return 0;
     }
     
 }
