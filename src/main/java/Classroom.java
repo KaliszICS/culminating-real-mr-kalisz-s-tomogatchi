@@ -1,18 +1,21 @@
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.Random;
 public class Classroom{
     //instance variables
     private Attendance attendance;
     private MarkingTest markingTest;
+<<<<<<< HEAD
     //private Task tasks[];
     //private AnswerQuestion answerQuestion;
 <<<<<<< HEAD
     private AnswerQuestion answerQuestion;
 =======
 >>>>>>> 3d5066a (changed marking test)
+=======
+    private AnswerQuestion answerQuestion;
+>>>>>>> dbe54a8 (p)
     private Scanner input;
+    private Tasks[] tasks;
     
     String[] fNames = {
         "Yaseman", "Yu-Yen", "Lily", "Jathav", "Richard", "Aarooran", "Johnathan", "Justin", "Arvin", "Raymond", "Aathi", 
@@ -29,16 +32,14 @@ public class Classroom{
 
     public Classroom(Scanner input){
         this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
+        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
         this.input = input;
-        //tasks=[new Attendece(fNames, INames, studentNumbers, persence), new MarkingTest(), new AnswerQuestion()];
     }
 
     public void attendanceTask(MrKalisz kalisz){
-        attendance.setInput(this.input);
-        //task[0].setInput(this.input)
+        Attendance attendance = (Attendance) tasks[0];
+        attendance.setInput(input);
         Student[][] seatingChart = attendance.makeSeatingChart(2,6);
-        //Student[][] seatingChart = task[0].makeSeatingChart(2,6);
-        
         attendance.doAttendance(seatingChart, kalisz);
     }
 

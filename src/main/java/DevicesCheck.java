@@ -113,10 +113,10 @@ public class DevicesCheck extends Tasks{
             }
         }
         if(badComputers){
-            DelayText.print("There's still bad computers left! Task done wrong. Current Energy: " + energyLeft, 1000);
+            DelayText.print("There's still bad computers left! Task done wrong", 1000);
         }
         else{
-            DelayText.print("You finished device checking! Task done correctly! Current Energy: " + energyLeft, 1000);
+            DelayText.print("You finished device checking! Task done correctly!", 1000);
         }
         
     }
