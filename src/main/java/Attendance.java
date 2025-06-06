@@ -152,10 +152,5 @@ public class Attendance extends Tasks{
         kalisz.setEnergy(kalisz.getEnergy() - this.energyCost);
         return kalisz.getEnergy();
     }
-    
-    @Override
-    public boolean checkAnswer(){
-        return false;
-    }
 
 }

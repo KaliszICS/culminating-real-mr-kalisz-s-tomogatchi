@@ -1,3 +1,3 @@
-public class MissingComponent {
+public class MissingComponent extends Tasks{
     
 }

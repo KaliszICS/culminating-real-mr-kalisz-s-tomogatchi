@@ -2,7 +2,7 @@ public class MarkingTest extends Tasks{
     int energyCost = 10;
 
     @Override
-    public int energyChange(){
+    public int energyChange(MrKalisz kalisz){
         return 0;
     }
     @Override

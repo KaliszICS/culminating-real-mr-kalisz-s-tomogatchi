@@ -7,23 +7,31 @@ public class Main {
 		boolean inClassroom = false;
 		boolean inTechCom = false;
 		Scanner in = new Scanner(System.in);
+		//image of Mr.Kalisz
 		DelayText.print("Welcome to Mr.Kalisz Simulator", 2000);
 		System.out.print("Type start to begin the game: ");
 		String startAns = in.nextLine();
 		if(startAns.equalsIgnoreCase("start")){
 			gameStart = true;
 		}
+		//image of car driving
 
-		//Game only starts if the player wants to
+		//Game only starts if the player types start and initates it
 		while(gameStart){
+			//image of classroom
 			DelayText.print("First on your schedule, go to your classroom!", 2000);
 			inClassroom = true;
 			//Only runs if Mr.Kalisz is in the classroom
 			while(inClassroom){
 				Classroom classroomTasks = new Classroom(in);
-				DelayText.print("Here's the list of tasks to do in your classroom, you will choose two: \n1. Do attendance - Energy Cost: 10 \n2. Answer Questions - Energy Cost: 5 \n3. Mark Tests - Energy Cost: 20 \n--------------------------------------------", 5000); // say each energycost beside i t
+				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Answer Questions - Energy Cost: 5 \n3. Mark Tests - Energy Cost: 15 \n--------------------------------------------", 5000); // say each energycost beside i t
 				for(int i = 0; i < 2; i++){
-					System.out.print("Which task do you want to do? Enter the number: ");
+					if(i == 0){
+						System.out.print("What's the first task you want to do? Enter the number: ");
+					}
+					else{
+						System.out.print("What's the second task you want to do? Enter the number: ");
+					}
 					int taskNum = in.nextInt();
 					in.nextLine(); //consume new line
 					if(taskNum == 1){
@@ -37,22 +45,52 @@ public class Main {
 					}
 					else{
 						DelayText.print("No task selected. Classroom exited", 2000);
-						inClassroom = false; //exits the inClassroom loop
 						break;
 					}
 				}
-				System.out.print("After a full day in class, it's time to head to Tech Committee!");
+				DelayText.print("After a full day in class, it's time to head to Tech Committee!", 2000);
 				inTechCom = true;
 				inClassroom = false;
 			}
 
 			while(inTechCom){
+				TechCom techcom = new TechCom(in);
+				DelayText.print("\nHere's the list of tasks to do in Tech Committee, you get choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 5 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 5000);
+				for(int i = 0; i < 2; i++){
+					if(i == 0){
+						System.out.print("What's the first task you want to do? Enter the number: ");
+					}
+					else{
+						System.out.print("What's the second task you want to do? Enter the number: ");
+					}
+					int taskNum = in.nextInt();
+					in.nextLine(); //consume new line
+					if(taskNum == 1){
+						techcom.deviceCheckTask(kalisz);
+					}
+					else if(taskNum == 2){ //insert projector checking
 
+					}
+					else if(taskNum == 3){ //insert missing component
+
+					}
+					else{
+						DelayText.print("No task selected. Tech Committee exited", 2000);
+						break;
+					}
+				}
+				DelayText.print("Finally, the best part of the day, to go home!", 2000);
+				inTechCom = false; //exits the inTechCom loop
 			}
-			System.out.print("Type stop to end the game: ");
+			System.out.print("Type 'stop' to end the game: ");
 			String endAns = in.nextLine();
 			if(endAns.equalsIgnoreCase("stop")){
 				gameStart = false;
+			}
+			else{
+				DelayText.print("Game is continuing...", 2000);
+				DelayText.print("Another day, another day at school", 2000);
+				//image of the car on the road
 			}
 
 		}

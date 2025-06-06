@@ -24,4 +24,14 @@ public final class DelayText { //using utility class bc i want every class to be
 			e.printStackTrace();
 		}
     }
+
+	public static void print(Device device, int millis){
+        try{
+			System.out.println(device);
+			Thread.sleep(millis);
+		}
+		catch(InterruptedException e){
+			e.printStackTrace();
+		}
+    }
 }

@@ -1,0 +1,7 @@
+Model: Dell blah I'll check SN: 220825 Last Serviced Year: 2016
+Model: Dell Optiplex 780 SN: 244197 Last Serviced Year: 2018
+Model: Dell Optiplex 780 SN: 219256 Last Serviced Year: 2014
+Model: Dell blah I'll check SN: 261207 Last Serviced Year: 2014
+Model: Dell blah I'll check SN: 298536 Last Serviced Year: 2018
+Model: Dell Optiplex 780 SN: 381150 Last Serviced Year: 2018
+Model: Dell Optiplex 780 SN: 344298 Last Serviced Year: 2017
