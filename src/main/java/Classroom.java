@@ -8,7 +8,10 @@ public class Classroom{
     private MarkingTest markingTest;
     //private Task tasks[];
     //private AnswerQuestion answerQuestion;
+<<<<<<< HEAD
     private AnswerQuestion answerQuestion;
+=======
+>>>>>>> 3d5066a (changed marking test)
     private Scanner input;
     
     String[] fNames = {

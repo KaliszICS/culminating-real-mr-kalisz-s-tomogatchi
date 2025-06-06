@@ -27,9 +27,12 @@ public class MarkingTest extends Tasks{
    public void setTestAnswer(String testAnswer){
         this.testAnswer=testAnswer;
    }
+<<<<<<< HEAD
    public void setInput(String input){
     this.input = input;
    }
+=======
+>>>>>>> 3d5066a (changed marking test)
     public int findRightAnswers(){
         this.testAnswer=this.testAnswer.replaceAll("\\s+","");
         this.studentAnswer=this.studentAnswer.replaceAll("\\s+","");

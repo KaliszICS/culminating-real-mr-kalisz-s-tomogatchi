@@ -38,7 +38,6 @@ public class Main {
 						classroomTasks.attendanceTask(kalisz);
 					}
 					else if(taskNum == 2){ //insert markingTest
-
 					}
 					else if(taskNum == 3){ //insert answerQuestion
 
