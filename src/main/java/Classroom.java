@@ -6,6 +6,7 @@ public class Classroom{
     //instance variables
     private Attendance attendance;
     private MarkingTest markingTest;
+    //private Task tasks[];
     //private AnswerQuestion answerQuestion;
     private Scanner input;
     
@@ -25,11 +26,15 @@ public class Classroom{
     public Classroom(Scanner input){
         this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
         this.input = input;
+        //tasks=[new Attendece(fNames, INames, studentNumbers, persence), new MarkingTest(), new AnswerQuestion()];
     }
 
     public void attendanceTask(MrKalisz kalisz){
         attendance.setInput(this.input);
+        //task[0].setInput(this.input)
         Student[][] seatingChart = attendance.makeSeatingChart(2,6);
+        //Student[][] seatingChart = task[0].makeSeatingChart(2,6);
+        
         attendance.doAttendance(seatingChart, kalisz);
     }
 
