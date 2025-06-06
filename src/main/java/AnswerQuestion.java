@@ -62,5 +62,4 @@ public class AnswerQuestion extends Tasks{
     public void energyChange(MrKalisz kalisz) {
         
     }
-    
 }
