@@ -1,9 +1,7 @@
 Main.class
 Tasks.class
-Graphics.class
-Room.class
+Device.class
 Classroom.class
 Attendance.class
-MrKalisz.class
 Student.class
 DelayText.class
