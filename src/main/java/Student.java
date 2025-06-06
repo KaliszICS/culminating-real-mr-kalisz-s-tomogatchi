@@ -2,26 +2,31 @@ public class Student implements Comparable<Student>{
     private String firstName;
     private String lastName;
     private String studentNumber;
-    private int mark;
+    private double mark;
     private int volume;
     private String present;
 
-    //constructor for the students?
-    public Student(String firstName, String lastName, String studentNumber, int mark, int volume, String present){
+    //constructor for the students marks
+    public Student(String firstName, String lastName, double mark){ //i made mark a double
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mark = mark;
+    }
+
+    //constructor for students attendance
+    public Student(String firstName, String lastName, String studentNumber, String present){
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
-        this.mark = mark;
-        this.volume = volume;
         this.present = present;
     }
 
-    public Student(String firstName, String lastName, String present){
+    //constructor for students volume
+    public Student(String firstName, String lastName, int volume){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.present = present;
+        this.volume = volume;
     }
-
     //getters
     public String getFirstName(){
         return this.firstName;
@@ -35,7 +40,7 @@ public class Student implements Comparable<Student>{
         return this.studentNumber;
     }
 
-    public int getMark(){
+    public double getMark(){
         return this.mark;
     }
 
@@ -62,6 +67,21 @@ public class Student implements Comparable<Student>{
     @Override
     public int compareTo(Student student){
         return this.lastName.compareToIgnoreCase(student.lastName);
+    }
+
+    @Override
+    public boolean equals(Object o){
+         if(this == o){ 
+            return true;
+        }
+        if(o == null || getClass() != o.getClass()){ 
+            return false;
+        }
+        Student student = (Student)o;
+        if(student.getStudentNumber().equals(this.studentNumber)){
+            return true;
+        }
+        return false;
     }
 
 }
