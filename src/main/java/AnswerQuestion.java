@@ -1,4 +1,4 @@
-/*import java.util.Random;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -42,4 +42,4 @@ public class AnswerQuestion extends Tasks{
         return false;
     }
     
-} */
+}
