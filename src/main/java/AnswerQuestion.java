@@ -1,16 +1,14 @@
 import java.util.Random;
-
-import java.util.Random;
 import java.util.Scanner;
 
 
 public class AnswerQuestion extends Tasks{
-    int energyCost = 5;// idk
+    int energyCost = 25;// idk
 
     String[] questionsArr = {"What's a variable?", "So, can a abstract method have a body?", "How old are you?", "May I use the washroom", "How many permutations does Ball have?"};
     String[] answerArr = {"How are you asking that now? - Energy Cost: 1 \n Stores and represents information? Energy Cost: 4", "Yes - Energy Cost: 2 \n No - Energy Cost: 1", "No - Energy Cost: 1 \n 46 - Energy Cost: 2"};
     
-    Student student = new Student("Bob", "Ross", "342404090", 12, 5, "Present");
+    Student student = new Student("Bob", "Ross", "342404090","Present");
 
 
     public int answerQuestion(String[] questionArr, Student student, String[] answerArr, int energyCost){
@@ -27,7 +25,7 @@ public class AnswerQuestion extends Tasks{
         }
 
         else{
-            System.out.println("Options to answer the question: " + answerArr[num]);
+            System.out.println("Options to answer the question: ");
             System.out.println("Answer:");
             String ans = in.nextLine();
             energyCost = 5;
@@ -36,22 +34,8 @@ public class AnswerQuestion extends Tasks{
     }
 
     @Override
-<<<<<<< HEAD
-    public int energyChange(){
-        return 0;
-    }
-
-    @Override
-    public boolean checkAnswer(){
-        return false;
-    }
-
-    @Override
-    public int energyChange(MrKalisz kalisz) {
-        return 0;
+    public void energyChange(MrKalisz kalisz) {
+        
     }
     
 }
-=======
-} */
->>>>>>> b1bddf1 (a lot of changes)
