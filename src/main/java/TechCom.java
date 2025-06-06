@@ -14,7 +14,7 @@ public class TechCom{
     int[] years = {2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025};
     public TechCom(Scanner input){
         this.devicesCheck = new DevicesCheck(models, serialNumbers, years, input);
-        this.projector = new Projector(); //add on
+        this.projector = new Projector(input); //add on
         this.missingComponent = new MissingComponent();
         this.input = input;
     }
@@ -26,8 +26,8 @@ public class TechCom{
     }
 
     public void projectorCheckTask(){
-
-    }
+        projector.setInput(input);
+    }   
 
     public void componentCheckTask(){
 

@@ -63,7 +63,7 @@ public class DevicesCheck extends Tasks{
             pw = new PrintWriter(new FileWriter("DevicesOld.txt"));
             boolean notDone = true;
             while(notDone){
-                System.out.print("Enter the serial numbers of the 'bad' to remove them, type 'done' when finished: ");
+                System.out.print("Enter the serial numbers of the 'bad' computers to remove them, type 'done' when finished: ");
                 String serialNum = input.nextLine();
                 if(serialNum.equalsIgnoreCase("done")){
                     notDone = false;
