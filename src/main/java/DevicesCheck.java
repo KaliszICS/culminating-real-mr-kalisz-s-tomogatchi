@@ -53,13 +53,11 @@ public class DevicesCheck extends Tasks{
     }
 
     public void deviceChecking(ArrayList<Device> devices, MrKalisz kalisz){
-        ArrayList<Device> badDevices = makeBadDevicesList(devices);
         DelayText.print("It's time to check devices! Here's the devices you need to check: ", 1000);
         for(Device device : devices){
             DelayText.print(device, 1000);
         }
         DelayText.print("To check whether a device is 'bad', check if the lastServicedYear is before 2019", 1000);
-        int energyLeft = kalisz.getEnergy();
         PrintWriter pw = null;
         try{
             pw = new PrintWriter(new FileWriter("DevicesOld.txt"));
@@ -110,7 +108,7 @@ public class DevicesCheck extends Tasks{
         boolean badComputers = false;
         for(int i = 0; i < devices.size(); i++){
             if(devices.get(i).getLastServicedYear() < 2019){
-                energyLeft = energyChange(kalisz);
+                energyChange(kalisz);
                 badComputers = true;
             }
         }
@@ -124,8 +122,7 @@ public class DevicesCheck extends Tasks{
     }
 
     @Override
-    public int energyChange(MrKalisz kalisz){
+    public void energyChange(MrKalisz kalisz){
         kalisz.setEnergy(kalisz.getEnergy() - this.energyCost);
-        return kalisz.getEnergy();
     }
 }

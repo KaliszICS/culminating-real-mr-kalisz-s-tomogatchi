@@ -6,8 +6,12 @@ public class Classroom{
     //instance variables
     private Attendance attendance;
     private MarkingTest markingTest;
+<<<<<<< HEAD
     //private Task tasks[];
     //private AnswerQuestion answerQuestion;
+=======
+    private AnswerQuestion answerQuestion;
+>>>>>>> b1bddf1 (a lot of changes)
     private Scanner input;
     
     String[] fNames = {

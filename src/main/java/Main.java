@@ -46,6 +46,16 @@ public class Main {
 					else{
 						DelayText.print("No task selected. Classroom exited", 2000);
 						break;
+					   }
+					}
+					if(kalisz.getEnergy() < 0){
+						DelayText.print("Energy is 0, you have lost the game!", 2000);
+						inClassroom = false;
+						gameStart = false;
+						break;
+					}
+					else{
+						DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
 					}
 				}
 				DelayText.print("After a full day in class, it's time to head to Tech Committee!", 2000);
@@ -75,11 +85,20 @@ public class Main {
 
 					}
 					else{
-						DelayText.print("No task selected. Tech Committee exited", 2000);
-						break;
+						if(kalisz.getEnergy() <= 0){
+							DelayText.print("Energy is 0, you have lost the game!", 2000);
+							inTechCom = false;
+							gameStart = false;
+							break;
+						}
+						else{
+							DelayText.print("No task selected. Tech Committee exited", 2000);
+							break;
+						}
 					}
 				}
 				DelayText.print("Finally, the best part of the day, to go home!", 2000);
+				DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
 				inTechCom = false; //exits the inTechCom loop
 			}
 			System.out.print("Type 'stop' to end the game: ");
@@ -92,8 +111,8 @@ public class Main {
 				DelayText.print("Another day, another day at school", 2000);
 				//image of the car on the road
 			}
+			
 
 		}
 		
-	}
 }

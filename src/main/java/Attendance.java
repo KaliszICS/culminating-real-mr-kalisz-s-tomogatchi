@@ -127,7 +127,6 @@ public class Attendance extends Tasks{
         }
 
         DelayText.print("\nPlease mark those in their seats present IN ORDER BY LAST NAME", 1000);
-        int energyLeft = kalisz.getEnergy();
         for(int i = 0; i < studentsPresent.size(); i++){
             System.out.print("Enter first and last name of student: ");
             String name = input.nextLine();
@@ -139,18 +138,17 @@ public class Attendance extends Tasks{
             }
             else{
                 DelayText.print(studentsPresent.get(i) + " is not marked correctly ❌", 1000);
-                energyLeft = energyChange(kalisz);
+                energyChange(kalisz);
             }
 
         }
-        DelayText.print("Attendance is done! Current energy: " + energyLeft, 3000);
+        DelayText.print("Attendance is done!", 3000);
     }
 
     @Override
-    public int energyChange(MrKalisz kalisz){ //energyChange takes in a MrKalisz object
+    public void energyChange(MrKalisz kalisz){ //energyChange takes in a MrKalisz object
         //set new kalisz energy
         kalisz.setEnergy(kalisz.getEnergy() - this.energyCost);
-        return kalisz.getEnergy();
     }
 
 }
