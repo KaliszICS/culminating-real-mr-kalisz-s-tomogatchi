@@ -41,5 +41,11 @@ public class AnswerQuestion extends Tasks{
     public boolean checkAnswer(){
         return false;
     }
+
+    @Override
+    int energyChange(MrKalisz kalisz) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'energyChange'");
+    }
     
 }
