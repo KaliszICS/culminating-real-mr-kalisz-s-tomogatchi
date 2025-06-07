@@ -113,7 +113,7 @@ public class Main {
 			}
 			
 
-		}
+	}
 
 	public static int getWins(){
 		//create a fileWriter

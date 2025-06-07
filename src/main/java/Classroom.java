@@ -4,16 +4,7 @@ public class Classroom{
     //instance variables
     private Attendance attendance;
     private MarkingTest markingTest;
-<<<<<<< HEAD
-    //private Task tasks[];
-    //private AnswerQuestion answerQuestion;
-<<<<<<< HEAD
     private AnswerQuestion answerQuestion;
-=======
->>>>>>> 3d5066a (changed marking test)
-=======
-    private AnswerQuestion answerQuestion;
->>>>>>> dbe54a8 (p)
     private Scanner input;
     private Tasks[] tasks;
     
