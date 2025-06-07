@@ -50,7 +50,6 @@ public class MarkingTest extends Tasks{
     while(num!=findRightAnswers()){
         DelayText.print("Wrong answer", 2500);
         DelayText.print("Input the number of the write answer: ", 500);
-        energyCost+=5;
         num = input.nextInt();
         energyChange(kalisz);
     }
