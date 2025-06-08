@@ -6,7 +6,7 @@ import java.util.Scanner;
  * the energy cost depends on whether the answer is correct or not
  */
 public class AnswerQuestion extends Tasks{
-    int energyCost = 10; // the base energy cost for answering questions
+    int energyCost = 5; // the base energy cost for answering questions
 
     String[] questionsArr = { // 5 questions
         "What's a variable?", 
@@ -65,10 +65,10 @@ public class AnswerQuestion extends Tasks{
         
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
             System.out.println("Correct:");
-            energyCost = 10;
+            energyCost = 5;
         } else {
             System.out.println("Wrong...you lose more energy.");
-            energyCost = 20;
+            energyCost = 10;
         }
 
         return energyCost;
