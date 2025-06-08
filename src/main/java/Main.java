@@ -1,8 +1,12 @@
-import java.io.*;
-import java.util.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 public class Main {
 	int numOfWins;
-	public static void main(String args[]) {
+	private static final String winsPath = "winsFile.txt";
+	public static void main(String args[]) throws IOException{
+		int numOfWins = getWins();
 		boolean gameStart = true;
 		boolean playAgain = false;
 		Scanner in = new Scanner(System.in);
@@ -120,14 +124,12 @@ public class Main {
 			}
 		}
 
-	}
-
-	public static int getWins(){
+	public static int getWins() throws IOException {
 		//create a fileWriter
 		FileReader inputStream = null;
 		int num = 0;
 		try {
-			inputStream = new FileReader("winsFile.txt");
+			inputStream = new FileReader(winsPath);
 			int c;
 			String numStr = "";
 			while((c = inputStream.read()) != -1){
@@ -137,11 +139,33 @@ public class Main {
 		} catch (IOException e){
 			System.out.println(e);
 		} finally {
-			if (inputStream != null) { //close the file, if its open
-				inputStream.close();
-			}
+			try {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error while closing the file.");
+            }
 		}
 		return num;
+	}
+	//Source: https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html
+	public static void setWins(int wins){
+		FileWriter writer = null;
+        try {
+            writer = new FileWriter(winsPath, false);
+            writer.write(Integer.toString(wins));
+        } catch (IOException e) {
+            System.out.println("Error while writing to the file.");
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error while closing the file.");
+            }
+        }
 	}
 }
 

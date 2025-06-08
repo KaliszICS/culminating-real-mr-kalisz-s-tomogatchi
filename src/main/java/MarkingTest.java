@@ -27,6 +27,9 @@ public class MarkingTest extends Tasks{
    public void setTestAnswer(String testAnswer){
         this.testAnswer=testAnswer;
    }
+   public void setInput(Scanner input){
+    this.input = input;
+   }
     public int findRightAnswers(){
         this.testAnswer=this.testAnswer.replaceAll("\\s+","");
         this.studentAnswer=this.studentAnswer.replaceAll("\\s+","");
