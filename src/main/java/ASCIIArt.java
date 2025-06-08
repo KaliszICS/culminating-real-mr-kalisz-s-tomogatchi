@@ -2,8 +2,7 @@ public final class ASCIIArt {
     private ASCIIArt(){
 
     }
-
-    //Sources: https://stackoverflow.com/questions/7522022/how-to-delete-stuff-printed-to-console-by-system-out-println 
+    
     public static void papers(int num){
         if(num == 0){
             String paper1 = 
@@ -23,7 +22,7 @@ public final class ASCIIArt {
             "| 10. [ ] A [X] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            DelayText.printSameLine(paper1, 5000);
+            DelayText.print(paper1, 5000);
         }
         if(num == 1){
             String paper2 = 
