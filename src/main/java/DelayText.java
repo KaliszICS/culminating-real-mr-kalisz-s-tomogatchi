@@ -1,5 +1,6 @@
-public final class DelayText { //using utility class bc i want every class to be able to access delay text without having to create an instance of the class everytime
-    
+
+//Using a utility class because we want every class to be able to access delay text without having to create an instance of the class everytime
+public final class DelayText {
     private DelayText(){
     }
     
@@ -14,7 +15,7 @@ public final class DelayText { //using utility class bc i want every class to be
 		}
 	}
 
-    //overloading!!!
+    //Overloading
     public static void print(Student student, int millis){
         try{
 			System.out.println(student);

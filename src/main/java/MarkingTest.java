@@ -39,7 +39,7 @@ public class MarkingTest extends Tasks{
         return rightAnswer;
    }
    public void doMarkingTest(MrKalisz kalisz){
-    DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's naswer to input how many mistakes the students made.", 4500);
+    DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's swer to input how many mistakes the students made.", 4500);
     //insert the picture and delay it for 5 seconds.
     DelayText.print(studentAnswer, 500);
     DelayText.print("Input the number of the write answer: ", 500);

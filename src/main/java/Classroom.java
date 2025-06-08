@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Classroom{
     //instance variables
-    private Attendance attendance;
-    private MarkingTest markingTest;
-    private AnswerQuestion answerQuestion;
     private Scanner input;
     private Tasks[] tasks;
     
@@ -22,7 +19,6 @@ public class Classroom{
     String[] presence = {"Present", "Absent"};
 
     public Classroom(Scanner input){
-        this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
         this.input = input;
     }
