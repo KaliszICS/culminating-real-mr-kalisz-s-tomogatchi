@@ -9,7 +9,7 @@ public class Projector extends Tasks{
 
         this.parts = new String[]{"Cable", "Power", "Lens", "Inputs", "Internet"};
         this.input = input;
-        this.energyCost = 10;
+        this.energyCost = 5;
     }
     public int getLength(){
         return this.parts.length;
@@ -30,7 +30,7 @@ public class Projector extends Tasks{
             DelayText.print(part, 500);
         }
         boolean fixed = false;
-        DelayText.print("Checking a part takes 10 energy. Which part would you like to check: ", 1000);
+        DelayText.print("Checking a part takes 5 energy. Which part would you like to check: ", 1000);
         while(!fixed){
             boolean valid = false;
             String userInput = input.nextLine();
@@ -44,11 +44,13 @@ public class Projector extends Tasks{
                         break;
                     }else{
                         energyChange(kalisz);
-                        DelayText.print("That part is working fine! Try another part: ",1000);
-                        //Graphics: flash big X on screen?
+                        System.out.print("That part is working fine! ");
                         if(energy <= 0){
                             return;
                         }
+                        DelayText.print("Current energy is " + energy + ". Try another part: ",1000);
+                        //Graphics: flash big X on screen?
+                        
                         break;
                     }
                 }

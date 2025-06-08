@@ -25,8 +25,9 @@ public class TechCom{
         devicesCheck.deviceChecking(devices, kalisz);
     }
 
-    public void projectorCheckTask(){
-        //projector.setInput(input);
+    public void projectorCheckTask(MrKalisz kalisz){
+        projector.setInput(input);
+        projector.doProjector(kalisz);
     }   
 
     public void componentCheckTask(){

@@ -17,6 +17,7 @@ public class Main {
 			//image of Mr.Kalisz
 			if(!playAgain){
 				DelayText.print("Welcome to Mr.Kalisz Simulator!", 2000);
+				DelayText.print("You have " + numOfWins + " wins!", 2000);
 				System.out.print("Type 'start' to begin the game: ");
 				String startAns = in.nextLine();
 				if(!startAns.equalsIgnoreCase("start")){
@@ -71,7 +72,7 @@ public class Main {
 			}
 			while(inTechCom){
 				TechCom techcom = new TechCom(in);
-				DelayText.print("Here's the list of tasks to do in Tech Committee, you get to choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 10 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 4000);
+				DelayText.print("Here's the list of tasks to do in Tech Committee, you get to choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 5 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 4000);
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -85,7 +86,7 @@ public class Main {
 						techcom.deviceCheckTask(kalisz);
 					}
 					else if(taskNum == 2){ //insert projector checking
-
+						techcom.projectorCheckTask(kalisz);
 					}
 					else if(taskNum == 3){ //insert missing component
 
@@ -109,6 +110,9 @@ public class Main {
 				System.out.println("Tech Committee Exited.");
 				DelayText.print("\nFinally, the best part of the day, to go home!", 2000);
 				DelayText.print("You ended the day with " + kalisz.getEnergy() + " energy!", 2000);
+				setWins(numOfWins + 1);
+				numOfWins += 1;
+				DelayText.print("You now have " + numOfWins + " wins!", 2000);
 			}
 			System.out.print("Type 'stop' to end the game or 'again' to play again: ");
 			String endAns = in.nextLine();
@@ -121,6 +125,7 @@ public class Main {
 			}
 			else{
 				gameStart = false; //if they input stop or anything that isn't again, the game will just exit
+			}
 			}
 		}
 
