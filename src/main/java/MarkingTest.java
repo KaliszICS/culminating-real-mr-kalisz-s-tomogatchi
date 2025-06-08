@@ -4,11 +4,10 @@ public class MarkingTest extends Tasks{
    private String studentAnswer;
    private String testAnswer;
    private Scanner input;
-   public MarkingTest(String studentAnswer, String testAnswer, Scanner input){
+   public MarkingTest(String studentAnswer, String testAnswer){
     this.studentAnswer = studentAnswer;
     this.testAnswer = testAnswer;
-    this.input = input;
-    this.energyCost=10;
+    this.energyCost=5;
    }
    //getters and setters
   
@@ -28,10 +27,14 @@ public class MarkingTest extends Tasks{
         this.testAnswer=testAnswer;
    }
    public void setInput(Scanner input){
+<<<<<<< HEAD
     this.input = input;
+=======
+    this.input=input;
+>>>>>>> c1632d6 (marking test)
    }
     public int findRightAnswers(){
-        this.testAnswer=this.testAnswer.replaceAll("\\s+","");
+        
         this.studentAnswer=this.studentAnswer.replaceAll("\\s+","");
         int rightAnswer=0;
         for(int x=0;this.testAnswer.length()>x;x++){
@@ -48,7 +51,7 @@ public class MarkingTest extends Tasks{
     DelayText.print("Input the number of the write answer: ", 500);
     int num = input.nextInt();
     while(num!=findRightAnswers()){
-        DelayText.print("Wrong answer", 2500);
+        DelayText.print("Wrong answer", 500);
         DelayText.print("Input the number of the write answer: ", 500);
         num = input.nextInt();
         energyChange(kalisz);

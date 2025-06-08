@@ -1,7 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 public class Classroom{
     //instance variables
+<<<<<<< HEAD
+=======
+    //private Attendance attendance;
+    //private MarkingTest markingTest;
+    //private AnswerQuestion answerQuestion;
+    //we are just making them in the tasks array we don't an instance for them anymore
+>>>>>>> c1632d6 (marking test)
     private Scanner input;
     private Tasks[] tasks;
     
@@ -17,9 +25,18 @@ public class Classroom{
     String[] studentNumbers = {"381224509", "308971339", "366920888", "394420357", "387095691", "398265364", "393472435", "353896904", "330374857", "314480171",
     "313971991", "358715202", "332013805", "321015205", "360258651", "383708912", "391284753", "392589530", "383044635", "307589604"};
     String[] presence = {"Present", "Absent"};
+    String[] studentAnswers={"abcabccabd","bcdabcdcba", "cdbdbabacd"};
+    String[] testAnswers={"abcaabcdad","dadabdbadc", "cdbdbabccd"};
 
     public Classroom(Scanner input){
+<<<<<<< HEAD
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
+=======
+        //this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
+        Random random=new Random();
+        int index=random.nextInt(3);
+        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(studentAnswers[index], testAnswers[index])};
+>>>>>>> c1632d6 (marking test)
         this.input = input;
     }
 
@@ -30,8 +47,11 @@ public class Classroom{
         attendance.doAttendance(seatingChart, kalisz);
     }
 
-    public double markTestTask(MrKalisz kalisz){
-        return 0.0;
+    public void markTestTask(MrKalisz kalisz){
+        MarkingTest markingTest=(MarkingTest) tasks[1];
+        markingTest.setInput(input);
+        markingTest.doMarkingTest(kalisz);
+        
     }
     public void answerQuestionTask(MrKalisz kalisz){
 
