@@ -46,9 +46,10 @@ public class Main {
 						classroomTasks.attendanceTask(kalisz);
 					}
 					else if(taskNum == 2){ //insert markingTest
+						classroomTasks.markTestTask(kalisz);
 					}
 					else if(taskNum == 3){ //insert answerQuestion
-
+						classroomTasks.answerQuestionTask(kalisz);
 					}
 					else{
 						DelayText.print("No task selected.", 2000);

@@ -33,7 +33,7 @@ public class Classroom{
     public double markTestTask(MrKalisz kalisz){
         return 0.0;
     }
-    public void answerQuestion(MrKalisz kalisz){
+    public void answerQuestionTask(MrKalisz kalisz){
 
     }
 
