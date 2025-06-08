@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class MrKalisz{
     protected int energy;
     private String firstName;
     private String lastName;
 
     public MrKalisz(){
-        this.energy = 100;
+        this.energy = 50;
         this.firstName = "James";
         this.lastName = "Kalisz";
     }

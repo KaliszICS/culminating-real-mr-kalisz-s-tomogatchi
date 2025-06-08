@@ -14,7 +14,7 @@ public class Classroom{
     };
     String[] lNames = {
         "Nikoo", "Shen", "You", "Puvirajan", "Gao", "Anakan", "Zhao", "Chu", "Deng", "Zeng", "Thavachselvan", 
-        "Smith", "Chan", "Liacos", "Chen", "Qiu", "Shepered", "Alexanian", "Haider", "Rajesengar"
+        "Smith", "Chan", "Liacos", "Chan", "Qiu", "Shepered", "Alexanian", "Haider", "Rajesengar"
     };
     //Used random number generator - Source: https://www.gigacalculator.com/calculators/random-number-generator.php
     String[] studentNumbers = {"381224509", "308971339", "366920888", "394420357", "387095691", "398265364", "393472435", "353896904", "330374857", "314480171",

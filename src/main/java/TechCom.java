@@ -7,7 +7,7 @@ public class TechCom{
     private MissingComponent missingComponent;
     private Scanner input;
 
-    String[] models = {"Dell Optiplex 780", "Dell blah I'll check"};
+    String[] models = {"Dell Optiplex 7020", "Dell Optiplex 780"};
     //Rnadom number generator - Source used: https://www.gigacalculator.com/calculators/random-number-generator.php 
     String[] serialNumbers = {"219256", "220825", "244197", "351657", "336776", "315745", "273759", "387771", "394961", "381150",
     "283314","344298", "298536", "270344", "261207", "314196", "233263", "246448", "250904", "375387"};

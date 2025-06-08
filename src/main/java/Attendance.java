@@ -117,7 +117,10 @@ public class Attendance extends Tasks{
         //will be replaced by an image?
          for(int row = 0; row < seatingChart.length; row++){
             for(int col = 0; col < seatingChart[row].length; col++){
-                DelayText.print(seatingChart[row][col] + " " + seatingChart[row][col].getPresent(), 1000);
+                DelayText.printSameLine(seatingChart[row][col] + " " + seatingChart[row][col].getPresent() + "    ", 1000);
+                if(col == seatingChart[row].length - 1){
+                    System.out.println("");
+                }
             }
         }  
         
@@ -130,19 +133,20 @@ public class Attendance extends Tasks{
         for(int i = 0; i < studentsPresent.size(); i++){
             System.out.print("Enter first and last name of student: ");
             String name = input.nextLine();
-            //used regular expression to remove all spaces/whitespaces in the string, should we also ignore like dashes, for example Yu-Yen's name.
+            //Used regular expression to remove all spaces/whitespaces in the string, should we also ignore like dashes, for example Yu-Yen's name.
             String nameNoSpaces = name.replaceAll("\\s+","");
             String expectedName = (studentsPresent.get(i).getFirstName() + studentsPresent.get(i).getLastName());
             if(nameNoSpaces.equalsIgnoreCase(expectedName)){
-                DelayText.print(studentsPresent.get(i) + " is marked here ✅", 1000);
+                DelayText.print(studentsPresent.get(i) + " is marked here ✅", 500);
             }
             else{
-                DelayText.print(studentsPresent.get(i) + " is not marked correctly ❌", 1000);
+                DelayText.print(name + " is not marked correctly ❌", 500);
+                DelayText.print("Expected name: " + studentsPresent.get(i), 500);
                 energyChange(kalisz);
             }
 
         }
-        DelayText.print("Attendance is done!", 3000);
+        DelayText.print("Attendance is done!", 2000);
     }
 
     @Override

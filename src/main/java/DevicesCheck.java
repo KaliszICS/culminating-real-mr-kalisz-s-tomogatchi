@@ -24,10 +24,10 @@ public class DevicesCheck extends Tasks{
     public ArrayList<Device> makeDevicesToCheckList(){
         ArrayList<Device> devices = new ArrayList<>();
         int x = 0;
-        while(x < 15){
+        while(x < 12){
             Random rand = new Random();
             int modelIndex = rand.nextInt(2);
-            int serialNumberIndex = rand.nextInt(15);
+            int serialNumberIndex = rand.nextInt(12);
             int yearIndex = rand.nextInt(12);
             Device toBeAdded = new Device(this.model[modelIndex], this.serialNumber[serialNumberIndex], this.lastServicedYears[yearIndex]);
             while(devices.contains(toBeAdded)){
@@ -57,7 +57,7 @@ public class DevicesCheck extends Tasks{
         for(Device device : devices){
             DelayText.print(device, 1000);
         }
-        DelayText.print("To check whether a device is 'bad', check if the lastServicedYear is before 2019", 1000);
+        DelayText.print("\nTo check whether a device is 'bad', check if the lastServicedYear is before 2019", 1000);
         PrintWriter pw = null;
         try{
             pw = new PrintWriter(new FileWriter("DevicesOld.txt"));

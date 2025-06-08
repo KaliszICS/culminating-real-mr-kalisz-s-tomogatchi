@@ -3,29 +3,31 @@ import java.util.*;
 public class Main {
 	int numOfWins;
 	public static void main(String args[]) {
-		MrKalisz kalisz = new MrKalisz();
-		boolean gameStart = false;
-		boolean inClassroom = false;
-		boolean inTechCom = false;
+		boolean gameStart = true;
+		boolean playAgain = false;
 		Scanner in = new Scanner(System.in);
-		//image of Mr.Kalisz
-		DelayText.print("Welcome to Mr.Kalisz Simulator", 2000);
-		System.out.print("Type start to begin the game: ");
-		String startAns = in.nextLine();
-		if(startAns.equalsIgnoreCase("start")){
-			gameStart = true;
-		}
-		//image of car driving
-
-		//Game only starts if the player types start and initates it
 		while(gameStart){
+			MrKalisz kalisz = new MrKalisz(); //new instance so the energy refreshes
+			boolean inClassroom = false;
+			boolean inTechCom = false;
+			//image of Mr.Kalisz
+			if(!playAgain){
+				DelayText.print("Welcome to Mr.Kalisz Simulator!", 2000);
+				System.out.print("Type 'start' to begin the game: ");
+				String startAns = in.nextLine();
+				if(!startAns.equalsIgnoreCase("start")){
+					System.out.println("Game exited.");
+					gameStart = false;
+					break;
+				}
+			}
+			DelayText.print("\nFirst on your schedule, go to your classroom!", 2500);
 			//image of classroom
-			DelayText.print("First on your schedule, go to your classroom!", 2000);
 			inClassroom = true;
 			//Only runs if Mr.Kalisz is in the classroom
 			while(inClassroom){
 				Classroom classroomTasks = new Classroom(in);
-				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Answer Questions - Energy Cost: 5 \n3. Mark Tests - Energy Cost: 15 \n--------------------------------------------", 5000); // say each energycost beside i t
+				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Answer Questions - Energy Cost: 5 \n3. Mark Tests - Energy Cost: 15 \n--------------------------------------------", 4000); // say each energycost beside i t
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -44,28 +46,28 @@ public class Main {
 
 					}
 					else{
-						DelayText.print("No task selected. Classroom exited", 2000);
-						break;
-					   }
+						DelayText.print("No task selected.", 2000);
+						continue;
 					}
 					if(kalisz.getEnergy() <= 0){
-						DelayText.print("Energy is 0, you have lost the game!", 2000);
-						inClassroom = false;
-						gameStart = false;
-						break;
+					DelayText.print("\nEnergy is 0, you have lost the game!", 2000);
+					inClassroom = false;
+					break;
 					}
 					else{
-						DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
+					DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
 					}
 				}
-				DelayText.print("After a full day in class, it's time to head to Tech Committee!", 2000);
-				inTechCom = true;
 				inClassroom = false;
 			}
-
+			if(kalisz.getEnergy() > 0){
+				System.out.println("Classroom exited.");
+				DelayText.print("\nAfter a full day in class, it's time to head to Tech Committee!", 2000);
+				inTechCom = true;
+			}
 			while(inTechCom){
 				TechCom techcom = new TechCom(in);
-				DelayText.print("\nHere's the list of tasks to do in Tech Committee, you get choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 10 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 5000);
+				DelayText.print("Here's the list of tasks to do in Tech Committee, you get to choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 10 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 4000);
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -85,33 +87,38 @@ public class Main {
 
 					}
 					else{
-						if(kalisz.getEnergy() <= 0){
-							DelayText.print("Energy is 0, you have lost the game!", 2000);
-							inTechCom = false;
-							gameStart = false;
-							break;
-						}
-						else{
-							DelayText.print("No task selected. Tech Committee exited", 2000);
-							break;
-						}
+						DelayText.print("No task selected.", 2000);
+						continue;
+					}
+					if(kalisz.getEnergy() <= 0){
+						DelayText.print("\nEnergy is 0, you have lost the game!", 2000);
+						inTechCom = false;
+						break;
+					}
+					else{
+						DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
 					}
 				}
-				DelayText.print("Finally, the best part of the day, to go home!", 2000);
-				DelayText.print("Current Energy: " + kalisz.getEnergy(), 2000);
 				inTechCom = false; //exits the inTechCom loop
 			}
-			System.out.print("Type 'stop' to end the game: ");
-			String endAns = in.nextLine();
-			if(endAns.equalsIgnoreCase("stop")){
-				gameStart = false;
+			if(kalisz.getEnergy() > 0){
+				System.out.println("Tech Committee Exited.");
+				DelayText.print("\nFinally, the best part of the day, to go home!", 2000);
+				DelayText.print("You ended the day with " + kalisz.getEnergy() + " energy!", 2000);
 			}
-			else{
+			System.out.print("Type 'stop' to end the game or 'again' to play again: ");
+			String endAns = in.nextLine();
+			if(endAns.equalsIgnoreCase("again")){
 				DelayText.print("Game is continuing...", 2000);
-				DelayText.print("Another day, another day at school", 2000);
+				DelayText.print("Another day, another day at school...", 2000);
+				gameStart = true;
+				playAgain = true;
 				//image of the car on the road
 			}
-			
+			else{
+				gameStart = false; //if they input stop or anything that isn't again, the game will just exit
+			}
+		}
 
 	}
 
