@@ -17,7 +17,11 @@ public class Main {
 			//image of Mr.Kalisz
 			if(!playAgain){
 				DelayText.print("Welcome to Mr.Kalisz Simulator!", 2000);
-				DelayText.print("You have " + numOfWins + " wins!", 2000);
+				if(numOfWins == 1){
+					DelayText.print("You have " + numOfWins + " win!", 2000);
+				}else{
+					DelayText.print("You have " + numOfWins + " wins!", 2000);
+				}
 				System.out.print("Type 'start' to begin the game: ");
 				String startAns = in.nextLine();
 				if(!startAns.equalsIgnoreCase("start")){
