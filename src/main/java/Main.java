@@ -16,6 +16,7 @@ public class Main {
 			boolean inTechCom = false;
 			//image of Mr.Kalisz
 			if(!playAgain){
+				//ASCIIArt.kaliszAvatar();
 				DelayText.print("Welcome to Mr.Kalisz Simulator!", 2000);
 				if(numOfWins == 1){
 					DelayText.print("You have " + numOfWins + " win!", 2000);
@@ -36,7 +37,7 @@ public class Main {
 			//Only runs if Mr.Kalisz is in the classroom
 			while(inClassroom){
 				Classroom classroomTasks = new Classroom(in);
-				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Answer Questions - Energy Cost: 5 \n3. Mark Tests - Energy Cost: 15 \n--------------------------------------------", 4000); // say each energycost beside i t
+				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Mark Tests - Energy Cost: 15 \n3. Answer Questions - Energy Cost: 5 \n--------------------------------------------", 4000); // say each energycost beside i t
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");

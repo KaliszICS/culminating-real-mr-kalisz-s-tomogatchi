@@ -114,10 +114,16 @@ public class Attendance extends Tasks{
         DelayText.print("It's time to do your attendance, here's who you see in the class:", 2500);
         ArrayList<Student> studentList = makeSortedStudentList(seatingChart);
         ArrayList<Student> studentsPresent = makeStudentsPresentList(studentList);
-        //will be replaced by an image?
+        
          for(int row = 0; row < seatingChart.length; row++){
             for(int col = 0; col < seatingChart[row].length; col++){
-                DelayText.printSameLine(seatingChart[row][col] + " " + seatingChart[row][col].getPresent() + "    ", 1000);
+                String table = 
+                "╔════════════════════════════╗\n"+
+                "║                            ║\n"+
+                "║   " + seatingChart[row][col] + " " + seatingChart[row][col].getPresent() + "  ║\n" +
+                "║                            ║\n"+
+                "╚════════════════════════════╝\n";
+                DelayText.printSameLine(table, 1000);
                 if(col == seatingChart[row].length - 1){
                     System.out.println("");
                 }
