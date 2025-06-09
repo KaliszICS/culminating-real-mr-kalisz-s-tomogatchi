@@ -1,3 +1,8 @@
+/**
+ * The classroom contains all the tasks- attendence, markingtest, answerquestions- and allow the player to access teh games.
+ * @author Lily You
+ * @version 1.11 2025/06/10????
+ */
 import java.util.Scanner;
 public class Classroom{
     //instance variables
@@ -18,22 +23,36 @@ public class Classroom{
     String[] presence = {"Present", "Absent"};
 
     int[] volume = {3, 4, 1, 10, 4, 2, 9, 6, 1, 5, 7, 8, 3, 2, 3, 4, 10, 8, 5, 2};
-
+    
+    /**
+     * The constructor that set the player's input.
+     * @param input ??
+     */
     public Classroom(Scanner input){
         this.tasks = new Tasks[]{new Attendance(input, fNames, lNames, studentNumbers, presence), new MarkingTest(input), new AnswerQuestion(input, fNames, lNames, volume)};
     }
-
+    /**
+     * The method that allow the player to do the attendece task???
+     * @param kalisz the object that represeant the players character.
+     */
     public void attendanceTask(MrKalisz kalisz){
         Attendance attendance = (Attendance) tasks[0];
         Student[][] seatingChart = attendance.makeSeatingChart(2,6);
         attendance.doAttendance(seatingChart, kalisz);
     }
-
+    /**
+     * The method that allow the player to do the marking test task.
+     * @param kalisz the object that represeant the players character.
+     */
     public void markTestTask(MrKalisz kalisz){
         MarkingTest markingTest = (MarkingTest) tasks[1];
         markingTest.doMarkingTest(kalisz);
         
     }
+    /**
+     * The method that allow the player to access the answerquestion task.
+     * @param kalisz the object that represeant the players character.
+     */
     public void answerQuestionTask(MrKalisz kalisz){
         AnswerQuestion answerQuestion = (AnswerQuestion) tasks[2];
         answerQuestion.answerQuestion(kalisz);

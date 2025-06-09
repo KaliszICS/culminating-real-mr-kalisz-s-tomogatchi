@@ -10,8 +10,8 @@ public final class DelayText {
 	 //Googled how to delay text in java - Source: https://mrparkonline.gitbook.io/guide-to-high-school-computer-science/java-essentials/delayed-output-in-java 
 	/**
 	 * This is a method that print the text and delay it in the terminal
-	 * @param text show the string that is being printed
-	 * @param millis the amount of time the text is being delayed in milli second
+	 * @param text the text that is being printed
+	 * @param millis the amount of time the next output is being delayed in milli second
 	 */
 	public static void print(String text, int millis){
 		try{
@@ -24,9 +24,9 @@ public final class DelayText {
 	}
     //Overloading
 	/**
-	 * This is a method that print the student object and delay it in terminal
-	 * @param student show the St
-	 * @param millis
+	 * This is a method that print a student object and delay the next output in the terminal
+	 * @param student the student object that is being printed
+	 * @param millis the amount of time the next output is being delayed in milli seconds
 	 */
     public static void print(Student student, int millis){
         try{
@@ -37,7 +37,11 @@ public final class DelayText {
 			e.printStackTrace();
 		}
     }
-
+	/**
+	 * This method print a device object and delay the next output in the terminal.
+	 * @param device the device object that is being printed.
+	 * @param millisthe the amount of time the next output is being delayed in milliseconds.
+	 */
 	public static void print(Device device, int millis){
         try{
 			System.out.println(device);
@@ -47,7 +51,11 @@ public final class DelayText {
 			e.printStackTrace();
 		}
     }
-
+	/**
+	 * This method print a string and delay the next output in the terminal. The next print will continue on the same line.
+	 * @param text The text that is being printed.
+	 * @param millis The amount of time that the next out put is being delayed in milliseconds
+	 */
 	public static void printSameLine(String text, int millis){
 		try{
 			System.out.print(text);

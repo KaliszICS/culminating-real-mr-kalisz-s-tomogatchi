@@ -1,5 +1,5 @@
 /**
- * Represeant the marking test task. It ask the player to find the number of the right answers in the students answers. If the player enter the wrong number it will deduct Mr. Kalisz energy
+ * Represeant the marking test task. It ask the player to find the number of the right answers in the students answers. If the player enter the wrong number it will deduct Mr. Kalisz energy.
  * @author Yaseman Nikoo
  * @veersion 1.4 2025/6/09
  */
@@ -9,13 +9,17 @@ import java.util.Random;
 public class MarkingTest extends Tasks{
    private Scanner input;
    /**
-    * The contructor only set the value of the energy cost for the 
+    * The contructor only set the value of the energy cost for this task. 
     */
    public MarkingTest(){
         this.energyCost=5;
    }
 
    //Getters and Seetters
+   /**
+    * A methdo that returns the input of the player.
+    * @return the input of the player
+    */
    public Scanner getInput(){
         return this.input;
    }
@@ -28,9 +32,11 @@ public class MarkingTest extends Tasks{
    String testAnswer;
    String testAnswerNoSpaces;
    String studentAnswerNoSpaces;
-
    String paper;
-
+   /**
+    * A method that randomly choosen one of the students and tests answers.
+    * @param paperAnswers the list that contains the papers answers.
+    */
    public void answers(String[] paperAnswers){
         Random rand = new Random();
         int paperNum = rand.nextInt(5);
@@ -38,7 +44,10 @@ public class MarkingTest extends Tasks{
         testAnswer = correctAnswers[paperNum];
         paper = ASCIIArt.papers(paperNum);
    }
-
+  /**
+   * The method that find the number of the right answers by comparing the papers and students answers.
+   * @return the number of the right answers in the students paper.
+   */
    public int findRightAnswers(){
         answers(paperAnswers);
         int rightAnswer = 0;
@@ -51,7 +60,10 @@ public class MarkingTest extends Tasks{
         }
         return rightAnswer;
    }
-
+   /**
+    * The method that ask the player to inpyt the number of the right answers from the students paper and tell the player whether the player were right or wrong.
+    * @param kalisz the object that represeant the character of the player and the energy of the player.
+    */
    public void doMarkingTest(MrKalisz kalisz){
     int rightAnswers = findRightAnswers();
     DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
@@ -68,7 +80,11 @@ public class MarkingTest extends Tasks{
         }
         DelayText.print("Right answer", 1000);
     }
- @Override
+    /**
+     * The method that change the energy of the kalisz object.
+     * @parm kalisz the object that represeant the character of the player and the energy of the player. 
+     */
+     @Override
     public void energyChange(MrKalisz kalisz){
         kalisz.setEnergy(kalisz.getEnergy()-this.energyCost);
     }
