@@ -33,7 +33,9 @@ public class MarkingTest extends Tasks{
    String[] correctAnswers = {"D A A B D A C C D B", "D C C A A D B C B A", "A C D B A B D D C A", "B C B D B A D D B A", "C A C D B A D A C B"};
    String studentAnswer;
    String testAnswer;
-   String testAnswersNoSpaces;
+   String testAnswerNoSpaces;
+   String studentAnswerNoSpaces;
+
    String paper;
 
    public void answers(String[] paperAnswers){
@@ -46,10 +48,12 @@ public class MarkingTest extends Tasks{
 
    public int findRightAnswers(){
         answers(paperAnswers);
-        int rightAnswer=0;
-        for(int x=0;testAnswer.length()>x;x++){
-            if(testAnswer.charAt(x) == studentAnswer.charAt(x)){
-                rightAnswer+=1;
+        int rightAnswer = 0;
+        testAnswerNoSpaces = testAnswer.replaceAll("\\s+","");
+        studentAnswerNoSpaces = studentAnswer.replaceAll("\\s+","");
+        for(int x = 0; x < testAnswerNoSpaces.length(); x++){
+            if(testAnswerNoSpaces.charAt(x) == studentAnswerNoSpaces.charAt(x)){
+                rightAnswer += 1;
             }
         }
         return rightAnswer;
@@ -59,16 +63,17 @@ public class MarkingTest extends Tasks{
     int rightAnswers = findRightAnswers();
     DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
     System.out.println(paper);
-    DelayText.print("These are test answer: " + testAnswer, 500);
-    DelayText.print("Input the number of the right answer: ", 500);
+    DelayText.print("These are the correct answers: " + testAnswer, 500);
+    DelayText.printSameLine("Input the number of the right student answers: ", 500);
     int num = input.nextInt();
-    while(num != rightAnswers){
-        DelayText.print("Wrong answer", 2500);
-        DelayText.print("Input the number of the right answer: ", 500);
-        num = input.nextInt();
-        energyChange(kalisz);
+    input.nextLine();
+        while(num != rightAnswers){
+            DelayText.print("Wrong answer", 1000);
+            DelayText.printSameLine("Input the number of the right student answers: ", 500);
+            num = input.nextInt();
+            energyChange(kalisz);
         }
-        DelayText.print("Right answer", 2500);
+        DelayText.print("Right answer", 1000);
     }
  @Override
     public void energyChange(MrKalisz kalisz){

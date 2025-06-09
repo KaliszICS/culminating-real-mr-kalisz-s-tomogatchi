@@ -11,6 +11,7 @@ public class AnswerQuestion extends Tasks{
 
     Random rand = new Random();
     int randomStudent = rand.nextInt(20);
+
     /**
      * 
      * @param student the student who is asking the question
@@ -52,24 +53,24 @@ public class AnswerQuestion extends Tasks{
      * @param energyCost the base energy cost for answering the question
      * @return the update energy cost after answering the question depending on right or wrong
      */
-    public int answerQuestion(MrKalisz kalisz){
+    public void answerQuestion(MrKalisz kalisz){
         //randomize questions asked by student using an array of questions and random number
         Random num = new Random();
 
         int questionNum = num.nextInt(questionsArr.length);
         int studentVolume = this.student.getVolume();
 
-        System.out.println("Student asks: " + questionsArr[questionNum]);
+        DelayText.print("Student asks: " + questionsArr[questionNum],1000);
 
         while (studentVolume <= 4){
-            System.out.println("Say that again?");
+            DelayText.print("Say that again?", 1000);
             studentVolume++;
             student.setVolume(studentVolume);
         }
 
-        System.out.println("Choose the correct answer: ");
+        DelayText.print("Choose the correct answer: ", 1000);
         for (int i = 0; i < 3; i++) {
-            System.out.println((i + 1)+": " + answerArr[questionNum][i]);
+            DelayText.print((i + 1)+": " + answerArr[questionNum][i], 1000);
         }
 
         int playerChoice = input.nextInt();
@@ -83,12 +84,10 @@ public class AnswerQuestion extends Tasks{
             energyCost = 10;
             energyChange(kalisz);
         }
-
-        return energyCost;
     }
 
     /**
-     * energy change to Mr. Kalisz
+     * Energy change to Mr. Kalisz
      * 
      * @param kalisz the MrKalisz object whose energy is going to change
      */
