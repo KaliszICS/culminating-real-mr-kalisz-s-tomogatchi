@@ -7,13 +7,17 @@ import java.util.Scanner;
  */
 public class AnswerQuestion extends Tasks{
     private Student student;
+    private Scanner input;
 
+    Random rand = new Random();
+    int randomStudent = rand.nextInt(20);
     /**
      * 
      * @param student the student who is asking the question
      */
-    public AnswerQuestion(Student student){
-        this.student = student;
+    public AnswerQuestion(Scanner in, String[] fNames, String[] lNames, int[] volume){
+        this.input = in;
+        this.student = new Student(fNames[randomStudent], lNames[randomStudent], volume[randomStudent]);
         //The base energy cost for answering question
         this.energyCost = 5;
     }
@@ -48,15 +52,14 @@ public class AnswerQuestion extends Tasks{
      * @param energyCost the base energy cost for answering the question
      * @return the update energy cost after answering the question depending on right or wrong
      */
-    public int answerQuestion(String[] questionArr, String[][] answerArr, MrKalisz kalisz){
-        Scanner in = new Scanner(System.in);
+    public int answerQuestion(MrKalisz kalisz){
         //randomize questions asked by student using an array of questions and random number
         Random num = new Random();
 
         int questionNum = num.nextInt(questionsArr.length);
         int studentVolume = this.student.getVolume();
 
-        System.out.println("Student asks: " + questionArr[questionNum]);
+        System.out.println("Student asks: " + questionsArr[questionNum]);
 
         while (studentVolume <= 4){
             System.out.println("Say that again?");
@@ -69,7 +72,7 @@ public class AnswerQuestion extends Tasks{
             System.out.println((i + 1)+": " + answerArr[questionNum][i]);
         }
 
-        int playerChoice = in.nextInt();
+        int playerChoice = input.nextInt();
         
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
             System.out.println("Correct:");

@@ -4,10 +4,10 @@ public class MrKalisz{
     private String lastName;
 
     /**
-     * constructor
+     * Constructor
      */
     public MrKalisz(){
-        this.energy = 50;
+        this.energy = 100;
         this.firstName = "James";
         this.lastName = "Kalisz";
     }

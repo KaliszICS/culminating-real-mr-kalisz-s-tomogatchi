@@ -1,9 +1,6 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Random;
 public class Classroom{
     //instance variables
-    private Scanner input;
     private Tasks[] tasks;
     
     String[] fNames = {
@@ -23,45 +20,23 @@ public class Classroom{
     int[] volume = {3, 4, 1, 10, 4, 2, 9, 6, 1, 5, 7, 8, 3, 2, 3, 4, 10, 8, 5, 2};
 
     public Classroom(Scanner input){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
-=======
-        //this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
-        Random random=new Random();
-        int index=random.nextInt(3);
-        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(studentAnswers[index], testAnswers[index])};
->>>>>>> c1632d6 (marking test)
-=======
-        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(), new AnswerQuestion(new Student(fNames[randomStudent], lNames[randomStudent]), volume[randomStudent])};
->>>>>>> dfd1374 (k)
-=======
-        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
->>>>>>> 20098d8 (markingtest)
-=======
-        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(), new AnswerQuestion(fNames, lNames, volume)};
->>>>>>> fe327a3 (help)
-        this.input = input;
+        this.tasks = new Tasks[]{new Attendance(input, fNames, lNames, studentNumbers, presence), new MarkingTest(input), new AnswerQuestion(input, fNames, lNames, volume)};
     }
 
     public void attendanceTask(MrKalisz kalisz){
         Attendance attendance = (Attendance) tasks[0];
-        attendance.setInput(input);
         Student[][] seatingChart = attendance.makeSeatingChart(2,6);
         attendance.doAttendance(seatingChart, kalisz);
     }
 
     public void markTestTask(MrKalisz kalisz){
         MarkingTest markingTest = (MarkingTest) tasks[1];
-        markingTest.setInput(input);
         markingTest.doMarkingTest(kalisz);
         
     }
     public void answerQuestionTask(MrKalisz kalisz){
         AnswerQuestion answerQuestion = (AnswerQuestion) tasks[2];
-
+        answerQuestion.answerQuestion(kalisz);
     }
 
 }

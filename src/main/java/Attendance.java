@@ -8,12 +8,13 @@ public class Attendance extends Tasks{
     private String[] presence;
     private Scanner input;
 
-    public Attendance(String[] firstNames, String[] lastNames, String[] studentNumbers, String[] presence){
+    public Attendance(Scanner in, String[] firstNames, String[] lastNames, String[] studentNumbers, String[] presence){
         this.firstNames = firstNames;
         this.lastNames = lastNames;
         this.studentNumbers = studentNumbers;
         this.presence = presence;
         this.energyCost = 10;
+        this.input = in;
     }
 
     //getters
@@ -117,13 +118,7 @@ public class Attendance extends Tasks{
         
          for(int row = 0; row < seatingChart.length; row++){
             for(int col = 0; col < seatingChart[row].length; col++){
-                String table = 
-                "╔════════════════════════════╗\n"+
-                "║                            ║\n"+
-                "║   " + seatingChart[row][col] + " " + seatingChart[row][col].getPresent() + "  ║\n" +
-                "║                            ║\n"+
-                "╚════════════════════════════╝\n";
-                DelayText.printSameLine(table, 1000);
+                DelayText.printSameLine(seatingChart[row][col] + " " + seatingChart[row][col].getPresent(), 1000);
                 if(col == seatingChart[row].length - 1){
                     System.out.println("");
                 }
