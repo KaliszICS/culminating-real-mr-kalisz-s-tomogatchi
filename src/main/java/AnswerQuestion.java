@@ -15,6 +15,10 @@ public class AnswerQuestion extends Tasks{
     }
 
 
+    public AnswerQuestion() {
+        
+    }
+
     String[] questionsArr = { // 5 questions
         "What's a variable?", 
         "So, can a abstract method have a body?", 
