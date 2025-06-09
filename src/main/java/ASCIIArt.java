@@ -1,4 +1,5 @@
 public final class ASCIIArt {
+    
     private ASCIIArt(){
 
     }
@@ -31,7 +32,8 @@ public final class ASCIIArt {
             System.out.println(kalisz);
     }
 
-    public static void papers(int num){
+    public static String papers(int num){
+        String paper = "";
         if(num == 0){
             String paper1 = 
             "+------------------------------+\n" +
@@ -50,7 +52,7 @@ public final class ASCIIArt {
             "| 10. [ ] A [X] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            
+            paper = paper1;
         }
         if(num == 1){
             String paper2 = 
@@ -70,7 +72,7 @@ public final class ASCIIArt {
             "| 10. [ ] A [ ] B [ ] C [X] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            System.out.println(paper2);
+            paper = paper2;
 
         }
         if(num == 2){
@@ -91,7 +93,7 @@ public final class ASCIIArt {
             "| 10. [ ] A [X] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            System.out.println(paper3);
+            paper = paper3;
         }
         
         if(num == 3){
@@ -112,7 +114,7 @@ public final class ASCIIArt {
             "| 10. [X] A [ ] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            System.out.println(paper4);
+            paper = paper4;
         }
 
         if(num == 4){
@@ -145,7 +147,7 @@ public final class ASCIIArt {
         "@@@@@@@@  %@@-  @@@@* \n" + 
         "@   :%@@@+@@@ .@@@@@# \n" + 
         "      @@@@@%@@@@@  *  \n" + 
-        "#@@@@@@@@@@@@@@     = \n" + 
+        "#@@@@@@@ FAN @@@@ = \n" + 
         "#@@%@@ @@@@@@@@@@@@@* \n" + 
         "%  @#@@@#@@@ =@@@@@%# \n" + 
         "@@# @@@@ *@@@.     @* \n" + 

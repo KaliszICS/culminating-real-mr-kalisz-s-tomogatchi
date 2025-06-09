@@ -19,14 +19,11 @@ public class Classroom{
     "313971991", "358715202", "332013805", "321015205", "360258651", "383708912", "391284753", "392589530", "383044635", "307589604"};
 
     String[] presence = {"Present", "Absent"};
-    String[] studentAnswers={"abcabccabd","bcdabcdcba", "cdbdbabacd"};
-    String[] testAnswers={"abcaabcdad","dadabdbadc", "cdbdbabccd"};
 
     int[] volume = {3, 4, 1, 10, 4, 2, 9, 6, 1, 5, 7, 8, 3, 2, 3, 4, 10, 8, 5, 2};
 
-    int randomStudent = new Random().nextInt(20);
-
     public Classroom(Scanner input){
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,6 +40,9 @@ public class Classroom{
 =======
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
 >>>>>>> 20098d8 (markingtest)
+=======
+        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(), new AnswerQuestion(fNames, lNames, volume)};
+>>>>>>> fe327a3 (help)
         this.input = input;
     }
 
@@ -54,7 +54,7 @@ public class Classroom{
     }
 
     public void markTestTask(MrKalisz kalisz){
-        MarkingTest markingTest=(MarkingTest) tasks[1];
+        MarkingTest markingTest = (MarkingTest) tasks[1];
         markingTest.setInput(input);
         markingTest.doMarkingTest(kalisz);
         

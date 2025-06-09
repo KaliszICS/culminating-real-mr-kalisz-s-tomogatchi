@@ -135,11 +135,7 @@ public class Main {
 			}
 		}
 
-<<<<<<< HEAD
 	public static int getWins() throws IOException {
-=======
-	/*public static int getWins(){
->>>>>>> c1632d6 (marking test)
 		//create a fileWriter
 		FileReader inputStream = null;
 		int num = 0;
@@ -163,7 +159,6 @@ public class Main {
             }
 		}
 		return num;
-<<<<<<< HEAD
 	}
 	//Source: https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html
 	public static void setWins(int wins){
@@ -184,8 +179,4 @@ public class Main {
         }
 	}
 }
-=======
-	*/}
-//}
->>>>>>> c1632d6 (marking test)
 

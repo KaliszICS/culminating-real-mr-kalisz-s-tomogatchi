@@ -8,12 +8,18 @@ import java.util.Scanner;
 public class AnswerQuestion extends Tasks{
     private Student student;
 
+<<<<<<< HEAD
     /**
      * 
      * @param student the student who is asking the question
      */
     public AnswerQuestion(Student student){
         this.student = student;
+=======
+    int randomStudent = new Random().nextInt(20);
+    public AnswerQuestion(String[] fNames, String[] lNames, int[] volume){
+        this.student = new Student(fNames[randomStudent], lNames[randomStudent], volume[randomStudent]);
+>>>>>>> fe327a3 (help)
         //The base energy cost for answering question
         this.energyCost = 5;
     }

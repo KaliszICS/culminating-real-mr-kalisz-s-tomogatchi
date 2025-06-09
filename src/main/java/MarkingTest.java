@@ -3,10 +3,16 @@ import java.util.Random;
 
 public class MarkingTest extends Tasks{
    private Scanner input;
+<<<<<<< HEAD
    public MarkingTest(String studentAnswer, String testAnswer){
     this.studentAnswer = studentAnswer;
     this.testAnswer = testAnswer;
     this.energyCost=5;
+=======
+
+   public MarkingTest(){
+    this.energyCost = 5;
+>>>>>>> fe327a3 (help)
    }
 
    //Getters and Seetters
@@ -18,6 +24,7 @@ public class MarkingTest extends Tasks{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 20098d8 (markingtest)
     this.input = input;
@@ -25,6 +32,8 @@ public class MarkingTest extends Tasks{
     public int findRightAnswers(){
         
 =======
+=======
+>>>>>>> fe327a3 (help)
         this.input = input;
    }
 
@@ -33,19 +42,21 @@ public class MarkingTest extends Tasks{
    String[] correctAnswers = {"D A A B D A C C D B", "D C C A A D B C B A", "A C D B A B D D C A", "B C B D B A D D B A", "C A C D B A D A C B"};
    String studentAnswer;
    String testAnswer;
+   String paper;
 
    public void answers(String[] paperAnswers){
         Random rand = new Random();
         int paperNum = rand.nextInt(5);
         studentAnswer = paperAnswers[paperNum];
         testAnswer = correctAnswers[paperNum];
+        paper = ASCIIArt.papers(paperNum);
    }
 
    public int findRightAnswers(){
-        this.testAnswer=this.testAnswer.replaceAll("\\s+","");
->>>>>>> dfd1374 (k)
-        this.studentAnswer=this.studentAnswer.replaceAll("\\s+","");
         answers(paperAnswers);
+        this.testAnswer = this.testAnswer.replaceAll("\\s+","");
+        this.studentAnswer = this.studentAnswer.replaceAll("\\s+","");
+    
         int rightAnswer=0;
         for(int x=0;testAnswer.length()>x;x++){
             if(testAnswer.charAt(x) == studentAnswer.charAt(x)){
@@ -56,32 +67,17 @@ public class MarkingTest extends Tasks{
    }
 
    public void doMarkingTest(MrKalisz kalisz){
-<<<<<<< HEAD
-    DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's swer to input how many mistakes the students made.", 4500);
-    //insert the picture and delay it for 5 seconds.
+    int rightAnswers = findRightAnswers();
+    DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
+    System.out.println(paper);
     DelayText.print(studentAnswer, 500);
-    DelayText.print("Input the number of the write answer: ", 500);
+    DelayText.print("Input the number of the right answer: ", 500);
     int num = input.nextInt();
-    while(num!=findRightAnswers()){
-        DelayText.print("Wrong answer", 500);
-        DelayText.print("Input the number of the write answer: ", 500);
+    while(num != rightAnswers){
+        DelayText.print("Wrong answer", 2500);
+        DelayText.print("Input the number of the right answer: ", 500);
         num = input.nextInt();
         energyChange(kalisz);
-    }
-    DelayText.print("Right answer", 2500);
-=======
-        DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
->>>>>>> dfd1374 (k)
-    
-        DelayText.print(studentAnswer, 500);
-        DelayText.print("Input the number of the write answer(Format: ?/10): ", 500);
-        int num = input.nextInt();
-        while(num!=findRightAnswers()){
-            DelayText.print("Wrong answer", 2500);
-            DelayText.print("Input the number of the write answer: ", 500);
-            energyCost+=5;
-            num = input.nextInt();
-            energyChange(kalisz);
         }
         DelayText.print("Right answer", 2500);
     }
