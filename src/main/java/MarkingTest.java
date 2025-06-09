@@ -8,17 +8,13 @@
 import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
-    private Scanner input;
-
-    /**
-    * Constructs a new MarkingTest object with the variable input and sets the value of the energy cost for the game.
-    * @param input a Scanner object used to retrieve user input
-    */
-    public MarkingTest(Scanner input){
-        this.energyCost = 5;
-        this.input = input;
-    }
-
+   private Scanner input;
+<<<<<<< HEAD
+   public MarkingTest(Scanner input){
+    this.input = input;
+    this.energyCost = 5;
+   }
+=======
    /**
     * A method that returns the input of the player.
     * @return the input of the player
