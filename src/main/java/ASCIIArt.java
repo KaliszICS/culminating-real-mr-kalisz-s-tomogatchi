@@ -50,7 +50,7 @@ public final class ASCIIArt {
             "| 10. [ ] A [X] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            DelayText.print(paper1, 5000);
+            
         }
         if(num == 1){
             String paper2 = 
@@ -133,8 +133,9 @@ public final class ASCIIArt {
             "| 10. [ ] A [X] B [ ] C [ ] D  |\n" +
             "|                              |\n" +
             "+------------------------------+\n";
-            System.out.println(paper5);
+            paper = paper5;
         }
+        return paper;
     }
 
     //Used https://www.asciiart.eu/image-to-ascii, https://www.compart.com/en/unicode/block/U+2580, https://www.compart.com/en/unicode/block/U+2500 to help create the components

@@ -6,14 +6,14 @@ public class Student implements Comparable<Student>{
     private int volume;
     private String present;
 
-    //constructor for the students marks
+    //Constructor for the students marks
     public Student(String firstName, String lastName, double mark){ //i made mark a double
         this.firstName = firstName;
         this.lastName = lastName;
         this.mark = mark;
     }
 
-    //constructor for students attendance
+    //Constructor for students attendance
     public Student(String firstName, String lastName, String studentNumber, String present){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,13 +21,14 @@ public class Student implements Comparable<Student>{
         this.present = present;
     }
 
-    //constructor for students volume
+    //Constructor for students volume
     public Student(String firstName, String lastName, int volume){
         this.firstName = firstName;
         this.lastName = lastName;
         this.volume = volume;
     }
-    //getters
+
+    //Getters
     public String getFirstName(){
         return this.firstName;
     }
@@ -53,7 +54,7 @@ public class Student implements Comparable<Student>{
     }
 
     
-    //setters
+    //Setters
     public void setVolume(int volume){
         this.volume = volume;
     }

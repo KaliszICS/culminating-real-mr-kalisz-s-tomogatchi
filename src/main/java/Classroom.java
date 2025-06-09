@@ -24,11 +24,17 @@ public class Classroom{
     //Used random number generator - Source: https://www.gigacalculator.com/calculators/random-number-generator.php
     String[] studentNumbers = {"381224509", "308971339", "366920888", "394420357", "387095691", "398265364", "393472435", "353896904", "330374857", "314480171",
     "313971991", "358715202", "332013805", "321015205", "360258651", "383708912", "391284753", "392589530", "383044635", "307589604"};
+
     String[] presence = {"Present", "Absent"};
     String[] studentAnswers={"abcabccabd","bcdabcdcba", "cdbdbabacd"};
     String[] testAnswers={"abcaabcdad","dadabdbadc", "cdbdbabccd"};
 
+    int[] volume = {3, 4, 1, 10, 4, 2, 9, 6, 1, 5, 7, 8, 3, 2, 3, 4, 10, 8, 5, 2};
+
+    int randomStudent = new Random().nextInt(20);
+
     public Classroom(Scanner input){
+<<<<<<< HEAD
 <<<<<<< HEAD
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
 =======
@@ -37,6 +43,9 @@ public class Classroom{
         int index=random.nextInt(3);
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(studentAnswers[index], testAnswers[index])};
 >>>>>>> c1632d6 (marking test)
+=======
+        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(), new AnswerQuestion(new Student(fNames[randomStudent], lNames[randomStudent]), volume[randomStudent])};
+>>>>>>> dfd1374 (k)
         this.input = input;
     }
 
@@ -54,6 +63,7 @@ public class Classroom{
         
     }
     public void answerQuestionTask(MrKalisz kalisz){
+        AnswerQuestion answerQuestion = (AnswerQuestion) tasks[2];
 
     }
 
