@@ -8,15 +8,14 @@ import java.util.Scanner;
 public class AnswerQuestion extends Tasks{
     private Student student;
 
+    /**
+     * 
+     * @param student the student who is asking the question
+     */
     public AnswerQuestion(Student student){
         this.student = student;
         //The base energy cost for answering question
         this.energyCost = 5;
-    }
-
-
-    public AnswerQuestion() {
-        
     }
 
     String[] questionsArr = { // 5 questions
