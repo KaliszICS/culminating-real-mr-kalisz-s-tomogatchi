@@ -1,6 +1,9 @@
+/**
+ * 
+ */
+
 import java.util.Scanner;
 import java.util.Random;
-
 public class MarkingTest extends Tasks{
    private Scanner input;
 <<<<<<< HEAD
@@ -29,6 +32,7 @@ public class MarkingTest extends Tasks{
 >>>>>>> 20098d8 (markingtest)
     this.input = input;
    }
+<<<<<<< HEAD
     public int findRightAnswers(){
         
 =======
@@ -36,6 +40,9 @@ public class MarkingTest extends Tasks{
 >>>>>>> fe327a3 (help)
         this.input = input;
    }
+=======
+
+>>>>>>> 6404556 (idk why)
 
    //put these variables whereever you would like
    String[] paperAnswers = {"D A A D B D C D D B", "C B C A A D C C B D", "A B D B B A D D C B", "B A B D B C C D C A", "C A D D B A A A C B"};
