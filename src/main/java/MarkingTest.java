@@ -3,17 +3,10 @@ import java.util.Random;
 
 public class MarkingTest extends Tasks{
    private Scanner input;
-<<<<<<< HEAD
    public MarkingTest(String studentAnswer, String testAnswer){
     this.studentAnswer = studentAnswer;
     this.testAnswer = testAnswer;
     this.energyCost=5;
-=======
-
-   public MarkingTest(Scanner input){
-        this.input = input;
-        this.energyCost = 10;
->>>>>>> dfd1374 (k)
    }
 
    //Getters and Seetters
@@ -24,10 +17,10 @@ public class MarkingTest extends Tasks{
    public void setInput(Scanner input){
 <<<<<<< HEAD
 <<<<<<< HEAD
-    this.input = input;
+<<<<<<< HEAD
 =======
-    this.input=input;
->>>>>>> c1632d6 (marking test)
+>>>>>>> 20098d8 (markingtest)
+    this.input = input;
    }
     public int findRightAnswers(){
         

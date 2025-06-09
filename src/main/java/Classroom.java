@@ -3,13 +3,6 @@ import java.util.Scanner;
 import java.util.Random;
 public class Classroom{
     //instance variables
-<<<<<<< HEAD
-=======
-    //private Attendance attendance;
-    //private MarkingTest markingTest;
-    //private AnswerQuestion answerQuestion;
-    //we are just making them in the tasks array we don't an instance for them anymore
->>>>>>> c1632d6 (marking test)
     private Scanner input;
     private Tasks[] tasks;
     
@@ -36,6 +29,7 @@ public class Classroom{
     public Classroom(Scanner input){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
 =======
         //this.attendance = new Attendance(fNames, lNames, studentNumbers, presence);
@@ -46,6 +40,9 @@ public class Classroom{
 =======
         this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence), new MarkingTest(), new AnswerQuestion(new Student(fNames[randomStudent], lNames[randomStudent]), volume[randomStudent])};
 >>>>>>> dfd1374 (k)
+=======
+        this.tasks = new Tasks[]{new Attendance(fNames, lNames, studentNumbers, presence)};
+>>>>>>> 20098d8 (markingtest)
         this.input = input;
     }
 
