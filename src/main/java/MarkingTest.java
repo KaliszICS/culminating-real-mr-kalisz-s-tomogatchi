@@ -10,21 +10,6 @@ public class MarkingTest extends Tasks{
     this.input = input;
     this.energyCost = 5;
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    public int findRightAnswers(){
-        
-=======
-=======
->>>>>>> fe327a3 (help)
-        this.input = input;
-   }
-=======
-
->>>>>>> 6404556 (idk why)
-=======
-
->>>>>>> 5843a88 (more changes sorry guys)
 
    //put these variables whereever you would like
    String[] paperAnswers = {"D A A D B D C D D B", "C B C A A D C C B D", "A B D B B A D D C B", "B A B D B C C D C A", "C A D D B A A A C B"};
