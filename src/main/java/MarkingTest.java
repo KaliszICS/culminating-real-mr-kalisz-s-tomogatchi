@@ -8,12 +8,6 @@ import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
    private Scanner input;
-<<<<<<< HEAD
-   public MarkingTest(Scanner input){
-    this.input = input;
-    this.energyCost = 5;
-   }
-=======
    /**
     * The contructor only set the value of the energy cost for the 
     */
@@ -26,7 +20,6 @@ public class MarkingTest extends Tasks{
         return this.input;
    }
 
->>>>>>> ee2180e (idk why)
 
    //put these variables whereever you would like
    String[] paperAnswers = {"D A A D B D C D D B", "C B C A A D C C B D", "A B D B B A D D C B", "B A B D B C C D C A", "C A D D B A A A C B"};
