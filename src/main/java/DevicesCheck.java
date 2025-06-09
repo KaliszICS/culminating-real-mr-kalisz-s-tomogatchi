@@ -8,6 +8,13 @@ public class DevicesCheck extends Tasks{
     private String[] serialNumber;
     private int[] lastServicedYears;
     private Scanner input;
+    /**
+     * 
+     * @param model
+     * @param serialNumber
+     * @param lastServicedYears
+     * @param input
+     */
     public DevicesCheck(String[] model, String[] serialNumber, int[] lastServicedYears, Scanner input){
         this.model = model;
         this.serialNumber = serialNumber;
