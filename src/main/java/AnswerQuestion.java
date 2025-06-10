@@ -43,7 +43,7 @@ public class AnswerQuestion extends Tasks{
     int[] correctAnswerIndex = {1, 1, 2, 1, 0}; // Indexes of correct answer
     
 
-    /** //check with yu-yen if it's okay to remove the latter because its better if its commented into the code i think
+    /** 
      * This method contains the prompts for user the answer question task
      * @param kalisz the MrKalisz object whose energy will be changed by the task
      */

@@ -13,7 +13,7 @@ public class MarkingTest extends Tasks{
     this.input = input;
     this.energyCost = 5;
    }
-   
+
    /**
     * A method that returns the input of the player.
     * @return the input of the player
@@ -60,13 +60,13 @@ public class MarkingTest extends Tasks{
         return rightAnswer;
    }
 
-   /** //check with yaseman if it's okay to remove the latter because its better if its commented into the code i think
+   /**
     * This method contains the prompts for user to play the marking test task
     * @param kalisz the object that represeant the character of the player and the energy of the player.
     */
    public void doMarkingTest(MrKalisz kalisz){
     int rightAnswers = findRightAnswers();
-    DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
+    DelayText.print("It's time to mark tests. Then, use the test's answer to input how many answers the students got correct.", 4500);
     System.out.println(paper);
     DelayText.print("These are the correct answers: " + testAnswer, 500);
     //Ask the player to input the number of the right answers from the students paper
