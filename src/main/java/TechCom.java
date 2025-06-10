@@ -38,6 +38,8 @@ public class TechCom{
         projector.doProjector(kalisz);
     }   
 
-    public void missingComponentTask(){
+    public void missingComponentTask(MrKalisz kalisz){
+        MissingComponents missingComponents = (MissingComponents) tasks[2];
+        missingComponents.doMissingComponents(kalisz);
     }
 }

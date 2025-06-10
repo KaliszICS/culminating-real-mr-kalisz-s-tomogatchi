@@ -111,7 +111,7 @@ public class Main {
 						techcom.projectorCheckTask(kalisz);
 					}
 					else if(taskNum == 3){ 
-
+						techcom.missingComponentTask(kalisz);
 					}
 					else{
 						DelayText.print("No task selected.", 2000);
