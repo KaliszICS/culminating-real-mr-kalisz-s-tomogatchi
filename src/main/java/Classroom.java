@@ -15,7 +15,7 @@ public class Classroom{
     
     //Parallel arrays of Strings that represent the first and last names of students, as well as their student numbers and volume
     String[] fNames = {
-        "Yaseman", "Yu-Yen", "Lily", "Jathav", "Richard", "Aarooran", "Johnathan", "Justin", "Arvin", "Raymond", "Aathi", 
+        "Yaseman", "Yu-Yen", "Lily", "Jathav", "Richard", "Aarooran", "Jonathan", "Justin", "Arvin", "Raymond", "Aathi", 
         "Mayuran", "Jackie", "Anastasia", "Elliot", "Jeffery", "Bojan", "Levon", "Safiya", "Rohit"
     };
 

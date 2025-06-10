@@ -77,7 +77,12 @@ public class AnswerQuestion extends Tasks{
             System.out.println("Correct:");
             energyCost = 5;
             energyChange(kalisz);
-        } else {
+        } 
+        if (playerChoice != 1 || playerChoice != 2 || playerChoice != 3) {
+            System.out.println("The choice is invalid. Please select again.");
+            answerQuestion(kalisz);
+        }
+        else {
             System.out.println("Wrong...you lose more energy.");
             energyCost = 10;
             energyChange(kalisz);
