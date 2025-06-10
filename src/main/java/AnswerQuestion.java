@@ -1,24 +1,24 @@
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  * a task where the player answers the student's questions in class
  * the energy cost depends on whether the answer is correct or not
+ * @author Yu-Yen Shen
+ * @version 1.5
  */
+
+import java.util.Random;
+import java.util.Scanner;
 public class AnswerQuestion extends Tasks{
     private Student student;
     private Scanner input;
 
-    Random rand = new Random();
-    int randomStudent = rand.nextInt(20);
-
     /**
-     * 
-     * @param student the student who is asking the question
+     * Constructs a new AnswerQuestion object with the variables input and student
+     * @param input the Scanner object used to receive user input
+     * @param student the Student object that represents the random student who is asking the question
      */
-    public AnswerQuestion(Scanner in, String[] fNames, String[] lNames, int[] volume){
-        this.input = in;
-        this.student = new Student(fNames[randomStudent], lNames[randomStudent], volume[randomStudent]);
+    public AnswerQuestion(Scanner input, Student student){
+        this.input = input;
+        this.student = student;
         //The base energy cost for answering question
         this.energyCost = 5;
     }
@@ -39,7 +39,7 @@ public class AnswerQuestion extends Tasks{
         {"12", "6", "24"}
     };
 
-    int[] correctAnswerIndex = {1, 1, 2, 1, 0}; // indexes of correct answer
+    int[] correctAnswerIndex = {1, 1, 2, 1, 0}; // Indexes of correct answer
     
 
     /**
@@ -47,11 +47,7 @@ public class AnswerQuestion extends Tasks{
      * the student's volume will be tested, if not loud enough, he will be asked to repeat until the volume is sufficient
      * energy cost depending on whether the answer is correct or not
      * 
-     * @param questionArr the array of questions asked
-     * @param student the student asking questions
-     * @param answerArr the choices of the answer for each question
-     * @param energyCost the base energy cost for answering the question
-     * @return the update energy cost after answering the question depending on right or wrong
+     * @param kalisz the MrKalisz object whose energy will be changed by the task
      */
     public void answerQuestion(MrKalisz kalisz){
         //randomize questions asked by student using an array of questions and random number

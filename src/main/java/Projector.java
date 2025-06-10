@@ -6,7 +6,6 @@ public class Projector extends Tasks{
     private String[] parts;
     private int energy;
     public Projector(Scanner input) {
-
         this.parts = new String[]{"Cable", "Power", "Lens", "Inputs", "Internet"};
         this.input = input;
         this.energyCost = 5;
@@ -14,10 +13,7 @@ public class Projector extends Tasks{
     public int getLength(){
         return this.parts.length;
     }
-    //setters
-    public void setInput(Scanner input){
-        this.input = input;
-    }
+    
     public void doProjector(MrKalisz kalisz){
         energy = kalisz.getEnergy();
         Random rand = new Random();
@@ -49,8 +45,6 @@ public class Projector extends Tasks{
                             return;
                         }
                         DelayText.print("Current energy is " + energy + ". Try another part: ",1000);
-                        //Graphics: flash big X on screen?
-                        
                         break;
                     }
                 }

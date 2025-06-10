@@ -37,7 +37,8 @@ public class Main {
 			//Only runs if Mr.Kalisz is in the classroom
 			while(inClassroom){
 				Classroom classroomTasks = new Classroom(in);
-				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Mark Tests - Energy Cost: 15 \n3. Answer Questions - Energy Cost: 5 \n--------------------------------------------", 4000); // say each energycost beside i t
+				DelayText.print("Here's the list of tasks to do in your classroom, you get to choose two: \n1. Do attendance - Energy Cost: 10 \n2. Mark Tests - Energy Cost: 5 \n3. Answer Questions - Energy Cost: 5 \n--------------------------------------------", 1000); // say each energycost beside i t
+				DelayText.print("Note: The energy cost represents each time you do something incorrectly IN the task", 3000);
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -46,14 +47,14 @@ public class Main {
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
 					int taskNum = in.nextInt();
-					in.nextLine(); //consume new line
+					in.nextLine();
 					if(taskNum == 1){
 						classroomTasks.attendanceTask(kalisz);
 					}
-					else if(taskNum == 2){ //insert markingTest
+					else if(taskNum == 2){ 
 						classroomTasks.markTestTask(kalisz);
 					}
-					else if(taskNum == 3){ //insert answerQuestion
+					else if(taskNum == 3){ 
 						classroomTasks.answerQuestionTask(kalisz);
 					}
 					else{
@@ -78,7 +79,8 @@ public class Main {
 			}
 			while(inTechCom){
 				TechCom techcom = new TechCom(in);
-				DelayText.print("Here's the list of tasks to do in Tech Committee, you get to choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 5 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 4000);
+				DelayText.print("Here's the list of tasks to do in Tech Committee, you get to choose two: \n1. Device Checking - Energy Cost: 15 \n2. Projector Checking - Energy Cost: 5 \n3. Missing Components - Energy Cost: 5 \n--------------------------------------------", 1000);
+				DelayText.print("Note: The energy cost represents each time you do something incorrectly IN the task", 3000);
 				for(int i = 0; i < 2; i++){
 					if(i == 0){
 						System.out.print("What's the first task you want to do? Enter the number: ");
@@ -87,14 +89,14 @@ public class Main {
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
 					int taskNum = in.nextInt();
-					in.nextLine(); //consume new line
+					in.nextLine();
 					if(taskNum == 1){
 						techcom.deviceCheckTask(kalisz);
 					}
-					else if(taskNum == 2){ //insert projector checking
+					else if(taskNum == 2){
 						techcom.projectorCheckTask(kalisz);
 					}
-					else if(taskNum == 3){ //insert missing component
+					else if(taskNum == 3){ 
 
 					}
 					else{

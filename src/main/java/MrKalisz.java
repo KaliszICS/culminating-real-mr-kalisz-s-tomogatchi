@@ -1,10 +1,18 @@
+/**
+ * This MrKalisz class allows users to access and modify the energy of Mr.Kalisz.
+ * This class contains a method that returns the name in an appropriate format.
+ * 
+ * @author Lily You
+ * @version 1.4
+ */
+
 public class MrKalisz{
     protected int energy;
     private String firstName;
     private String lastName;
 
     /**
-     * Constructor
+     * Constructs a new MrKalisz object and initalizies energy as 100, the first name as James and last name as Kalisz
      */
     public MrKalisz(){
         this.energy = 100;
@@ -13,15 +21,15 @@ public class MrKalisz{
     }
 
     /**
-     * get Mr. Kalisz's energy points
-     * @return Mr. Kalisz's energy remaining
+     * Returns Mr. Kalisz's energy
+     * @return Mr. Kalisz's energy as an integer
      */
     public int getEnergy(){
         return this.energy;
     }
 
     /**
-     * set Mr. Kalisz's energy points
+     * Sets Mr. Kalisz's energy
      * @param energyCost the energy cost while doing a task
      */
     public void setEnergy(int energyCost){
@@ -29,7 +37,8 @@ public class MrKalisz{
     }
 
     /**
-     * @return name in the format of "Mr. Kalisz"
+     * Returns the name in an appropriate format
+     * @return name of James Kalisz as a String in the format of "Mr. Kalisz"
      */
     @Override
     public String toString(){

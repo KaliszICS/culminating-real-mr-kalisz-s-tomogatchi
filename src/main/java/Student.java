@@ -1,3 +1,11 @@
+/**
+ * This Student class allows the user to access a student's first name, last name, student number volume and presence of a student and modify a student's volume.
+ * This class implements the Comparable interface and is used to sort students by last name.
+ * This class contains methods that return the student's name in a readable format, compares two students and checks if two students are equal.
+ * @author
+ * @version 1.3
+ */
+
 public class Student implements Comparable<Student>{
     private String firstName;
     private String lastName;
@@ -6,11 +14,11 @@ public class Student implements Comparable<Student>{
     private String present;
 
     /**
-     * constructor for students attendance
-     * @param firstName student's first name
-     * @param lastName student's last name
-     * @param studentNumber student's student number
-     * @param present student's present or not
+     * Constructor for student's attendance
+     * @param firstName String of the student's first name
+     * @param lastName String of student's last name
+     * @param studentNumber String of student's student number
+     * @param present String of student's presence
      */
     public Student(String firstName, String lastName, String studentNumber, String present){
         this.firstName = firstName;
@@ -20,10 +28,10 @@ public class Student implements Comparable<Student>{
     }
 
     /**
-     * constructor for students volume
-     * @param firstName student's first name
-     * @param lastName student's last name
-     * @param volume student's volume while speaking
+     * Constructor for a student using the variables firstName, lastName and volume
+     * @param firstName String of the student's first name
+     * @param lastName String of the student's last name
+     * @param volume int of the student's volume while speaking
      */
     public Student(String firstName, String lastName, int volume){
         this.firstName = firstName;
@@ -32,40 +40,40 @@ public class Student implements Comparable<Student>{
     }
 
     /**
-     * get student's first name
-     * @return student's first name
+     * Get student's first name
+     * @return student's first name as a String
      */
     public String getFirstName(){
         return this.firstName;
     }
 
     /**
-     * get student's last name
-     * @return student's last name
+     * Get student's last name
+     * @return student's last name as a String
      */
     public String getLastName(){
         return this.lastName;
     }
 
     /**
-     * get student number
-     * @return student number
+     * Get the student's student number
+     * @return student number as a String
      */
     public String getStudentNumber(){
         return this.studentNumber;
     }
 
     /**
-     * get student's volume
-     * @return student's volume while asking question
+     * Get student's volume
+     * @return student's volume as an int
      */
     public int getVolume(){
         return this.volume;
     }
 
     /**
-     * get student's attendance
-     * @return whether the student is present or absent
+     * Get student's attendance
+     * @return whether the student is present or absent as a String
      */
     public String getPresent(){
         return this.present;
@@ -73,15 +81,16 @@ public class Student implements Comparable<Student>{
 
     
     /**
-     * set student's volume while asking question
-     * @param volume the volume student has when asking the question
+     * Set student's volume
+     * @param volume int - the new volume of the student
      */
     public void setVolume(int volume){
         this.volume = volume;
     }
 
     /**
-     * @return student's full name in the format of "firstName lastName"
+     * Returns the name of student in a readable format
+     * @return student's full name as String in the format of "firstName lastName"
      */
     @Override
     public String toString(){
@@ -89,7 +98,9 @@ public class Student implements Comparable<Student>{
     }
 
     /**
-     * @return the difference of letters of the student's last names
+     * Compares two students using the alphabetical order of their last names
+     * @param student the Student object being compared
+     * @return a negative integer, zero or a positive integer if this student's last name is less than, equal to, or greater than the given student's last name, respectively
      */
     @Override
     public int compareTo(Student student){
@@ -97,17 +108,19 @@ public class Student implements Comparable<Student>{
     }
 
     /**
-     * @return if the student is completely equal to the object student
+     * Checks if two students are equal by comparing the student numbers
+     * @param obj the given Student object to be compared with
+     * @return ture if the student is has the same student numbers, otherwise false
      */
     @Override
-    public boolean equals(Object o){
-        if(this == o){ 
+    public boolean equals(Object obj){
+        if(this == obj){ 
             return true;
         }
-        if(o == null || getClass() != o.getClass()){ 
+        if(obj == null || getClass() != obj.getClass()){ 
             return false;
         }
-        Student student = (Student)o;
+        Student student = (Student)obj;
         if(student.getStudentNumber().equals(this.studentNumber)){
             return true;
         }

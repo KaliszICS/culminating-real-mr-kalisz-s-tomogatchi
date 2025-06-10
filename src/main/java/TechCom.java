@@ -1,33 +1,43 @@
+/**
+ * This TechCom class represents the three tasks that Mr.Kalisz can do in the tech committee room.
+ * The three tasks are checking devices, checking a projector and finding missing components.
+ * This class provides methods to run the three tasks.
+ * @author Lily You
+ * @author Jathav Puvirajan
+ * @version 1.4
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TechCom{
     private Tasks[] tasks;
-    private Scanner input;
 
-    String[] models = {"Dell Optiplex 7020", "Dell Optiplex 780"};
-    //Rnadom number generator - Source used: https://www.gigacalculator.com/calculators/random-number-generator.php 
-    String[] serialNumbers = {"219256", "220825", "244197", "351657", "336776", "315745", "273759", "387771", "394961", "381150",
-    "283314","344298", "298536", "270344", "261207", "314196", "233263", "246448", "250904", "375387"};
-    int[] years = {2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025};
+    /**
+     * Constructs a new TechCom object with the variable input and initializes an array of Tasks that have new objects of DevicesCheck, Projector and MissingComponents
+     * @param input a Scanner object used to receive user input
+     */
     public TechCom(Scanner input){
-        this.tasks = new Tasks[]{new DevicesCheck(models, serialNumbers, years, input), new Projector(input), new MissingComponent()};
-        this.input = input;
+        this.tasks = new Tasks[]{new DevicesCheck(input), new Projector(input), new MissingComponents()};
     }
 
+    /**
+     * Performs the device checking task using a new DevicesCheck object to generate a list of devices to be checked
+     * @param kalisz the MrKalisz object whose energy will be affected by the task
+     */
     public void deviceCheckTask(MrKalisz kalisz){
         DevicesCheck devicesCheck = (DevicesCheck) tasks[0];
-        devicesCheck.setInput(input);
-        ArrayList<Device> devices = devicesCheck.makeDevicesToCheckList();
+        ArrayList<Device> devices = devicesCheck.makeDevicesToCheckList(12);
         devicesCheck.deviceChecking(devices, kalisz);
     }
 
+
+    //jathav please add im too lazy
     public void projectorCheckTask(MrKalisz kalisz){
         Projector projector = (Projector) tasks[1];
-        projector.setInput(input);
         projector.doProjector(kalisz);
     }   
 
-    public void componentCheckTask(){
+    public void missingComponentTask(){
     }
 }

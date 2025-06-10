@@ -1,37 +1,24 @@
+/**
+ * This ASCIIArt class is a utility class that has methods that provide Strings with ASCII Art that is used throughout the simulator.
+ * 
+ * @author Lily You
+ * @version 1.2
+ */
+
 public final class ASCIIArt {
     
+    /*
+     * Private constructor to prevent object creation.
+     */
     private ASCIIArt(){
 
     }
-    
-    public static void kaliszAvatar(){
-        String kalisz =
-                                "                       ████████████████                 \r\n" + //
-                                "                     ██▒███████████▓▒▓███                 \r\n" + //
-                                "                    █▓▒████▓▓████▓▓▓█▓▓██▓              \r\n" + //
-                                "                   ▓▓▓▓█▓▒▓▓█▓▓▓▒▓████▒▓█▓▒               \r\n" + //
-                                "                 ▒▒▓▒▒▓▒▓▒▒▓▒▓███▓▓▓▓▓█▓▒▓▒▒                \r\n" + //
-                                "                 ▒▒▒▒▒▓▓░░░▒█████▒░░░▓█▓▒▒▒▒                \r\n" + //
-                                "                 ▒▒▓▓▒█░█▒▒▒▒███▒▒▓▒█░▓▓▒█▒▒                \r\n" + //
-                                "                 ▒▒█▓▒▓░██▓▓▓███▓▓▓▓█▒▓▓▒█▒▒                \r\n" + //
-                                "                   ▒▒▒▓█▒▒▒▓█████▓▒▒▒██▓▒▒▒                 \r\n" + //
-                                "                     ▒▒▓█████▒▒▒▓████▓▒▒                    \r\n" + //
-                                "                      ▒▒▒▓▓▓█████▓▓▓▒▒▒                     \r\n" + //
-                                "                         ▒▒▒▒▒▒▒▒▒▒▒                        \r\n" + //
-                                "                       ▒▒▒▒▒▒███▓▒▓▒▒▒                      \r\n" + //
-                                "                       ▒▒▒▒▓▒▒█▓▒▓▒▒▒▒                      \r\n" + //
-                                "                      ▒▒▓▒▒▒▒▒▒▒▒▒▒▒▓▒▒                     \r\n" + //
-                                "                     ▒▒▒▒▒▒▓▒▒▒▒▒▓▒▒▒▒▒▒                    \r\n" + //
-                                "                     ▒▒▒▒▒▓▓▓▓▒▒▓▓▓▒▒▒▒▒                    \r\n" + //
-                                "                    ▒▒▒▒▒▒▓▓▓▓▒▒▓▓▓▒▒▒▒▒▒                   \r\n" + //
-                                "                    ▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒                   \r\n" + //
-                                "                     ▒▒█▒▓██████████▒▓▒▒                    \r\n" + 
-                                "                       ▒▒▒▓█▓▒▒▒▓██▓▒▒▒                     \r\n" + 
-                                "                        ▒▒▓█▓▒▒▒▓██▓▒                       \r\n" + 
-                                "                       ▒▒▒▒▓▓▒▒▒▓▓▓▒▒▒                      \r\n";            
-            System.out.println(kalisz);
-    }
 
+    /**
+     * Returns a string representing a ICS Unit 1 Test paper as ASCII art
+     * @param num int - an integer between 0 to 4 that chooses which test paper version will be used in the simulator
+     * @return a String of the test paper as ASCII art or an empty String if the integer is not between 0 to 4
+     */
     public static String papers(int num){
         String paper = "";
         if(num == 0){
@@ -141,6 +128,11 @@ public final class ASCIIArt {
     }
 
     //Used https://www.asciiart.eu/image-to-ascii, https://www.compart.com/en/unicode/block/U+2580, https://www.compart.com/en/unicode/block/U+2500 to help create the components
+    
+    /**
+     * Returns an array of Strings of ASCII art representing computer components, including a fan, CPU, RAM, PSU and GPU
+     * @return an array of Strings that contain the ASCII art of 5 computer components
+     */
     public static String[] components(){
         String fan = 
         "@@@@@@   +@@@.  =@@@+ \n" + 

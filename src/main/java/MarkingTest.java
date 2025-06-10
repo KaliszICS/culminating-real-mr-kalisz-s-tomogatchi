@@ -1,23 +1,25 @@
 /**
- * Represeant the marking test task. It ask the player to find the number of the right answers in the students answers. If the player enter the wrong number it will deduct Mr. Kalisz energy.
+ * Represent the marking test task. It ask the player to find the number of the right answers in the students answers.
+ * If the player enter the wrong number it will deduct Mr. Kalisz energy
  * @author Yaseman Nikoo
- * @veersion 1.4 2025/6/09
+ * @version 1.4 2025/6/09
  */
 
 import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
-   private Scanner input;
-   /**
-    * The contructor only set the value of the energy cost for this task. 
+    private Scanner input;
+    /**
+    * This contructor sets the value of the energy cost for the game
     */
-   public MarkingTest(){
-        this.energyCost=5;
-   }
+    public MarkingTest(Scanner input){
+        this.energyCost = 5;
+        this.input = input;
+    }
 
    //Getters and Seetters
    /**
-    * A methdo that returns the input of the player.
+    * A method that returns the input of the player.
     * @return the input of the player
     */
    public Scanner getInput(){
@@ -44,11 +46,8 @@ public class MarkingTest extends Tasks{
         testAnswer = correctAnswers[paperNum];
         paper = ASCIIArt.papers(paperNum);
    }
-  /**
-   * The method that find the number of the right answers by comparing the papers and students answers.
-   * @return the number of the right answers in the students paper.
-   */
-   public int findRightAnswers(){
+
+    public int findRightAnswers(){
         answers(paperAnswers);
         int rightAnswer = 0;
         testAnswerNoSpaces = testAnswer.replaceAll("\\s+","");

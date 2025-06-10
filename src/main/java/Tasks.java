@@ -1,3 +1,4 @@
+//can someone pls javadoc
 abstract class Tasks{
     protected int energyCost;
     //abstract boolean checkAnswer();
