@@ -1,6 +1,11 @@
+/**
+ * This Projector 
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
+
 public class Projector extends Tasks{
     private Scanner input;
     private String[] parts;

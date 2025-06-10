@@ -1,12 +1,9 @@
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {
 	int numOfWins;
-	private static final String winsPath = "winsFile.txt";
 	public static void main(String args[]) throws IOException{
-		int numOfWins = getWins();
+		int numOfWins = FileIO.getWins();
 		boolean gameStart = true;
 		boolean playAgain = false;
 		Scanner in = new Scanner(System.in);
@@ -135,7 +132,7 @@ public class Main {
 				System.out.println("Tech Committee Exited.");
 				DelayText.print("\nFinally, the best part of the day, to go home!", 2000);
 				DelayText.print("You ended the day with " + kalisz.getEnergy() + " energy!", 2000);
-				setWins(numOfWins + 1);
+				FileIO.setWins(numOfWins + 1);
 				numOfWins += 1;
 				DelayText.print("You now have " + numOfWins + " wins!", 2000);
 			}
@@ -155,50 +152,6 @@ public class Main {
 				gameStart = false; 
 			}
 		}
-	}
-
-	public static int getWins() throws IOException {
-		//Create a fileWriter
-		FileReader inputStream = null;
-		int num = 0;
-		try {
-			inputStream = new FileReader(winsPath);
-			int c;
-			String numStr = "";
-			while((c = inputStream.read()) != -1){
-				numStr = numStr + (char)c;
-				num = Integer.parseInt(numStr);
-			}
-		} catch (IOException e){
-			System.out.println(e);
-		} finally {
-			try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (IOException e) {
-                System.out.println("Error while closing the file.");
-            }
-		}
-		return num;
-	}
-	//Source: https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html
-	public static void setWins(int wins){
-		FileWriter writer = null;
-        try {
-            writer = new FileWriter(winsPath, false);
-            writer.write(Integer.toString(wins));
-        } catch (IOException e) {
-            System.out.println("Error while writing to the file.");
-        } finally {
-            try {
-                if (writer != null) {
-                    writer.close();
-                }
-            } catch (IOException e) {
-                System.out.println("Error while closing the file.");
-            }
-        }
 	}
 }
 
