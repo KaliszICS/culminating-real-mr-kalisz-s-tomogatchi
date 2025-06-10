@@ -9,12 +9,11 @@ import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
    private Scanner input;
-<<<<<<< HEAD
    public MarkingTest(Scanner input){
     this.input = input;
     this.energyCost = 5;
    }
-=======
+   
    /**
     * A method that returns the input of the player.
     * @return the input of the player
