@@ -44,6 +44,7 @@ public class Projector extends Tasks{
                         if(energy <= 0){
                             return;
                         }
+                        //if your going to check the energy each time, you have to check yourself if the energy is 0 to prevent printing out (-) amount of energy
                         DelayText.print("Current energy is " + energy + ". Try another part: ",1000);
                         break;
                     }

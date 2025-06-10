@@ -1,8 +1,8 @@
 /**
- * This DevicesCheck class represents the device checking task.
- * It provides methods to 
+ * This DevicesCheck class represents the device checking task and extends the abstract class, Tasks. 
+ * This class contains methods that makes a list of devices to check, a list of 'bad' devices, to do the device checking task and changes Mr.Kalisz's energy.
  * @author Lily You
- * @version
+ * @version 1.5
  */
 
 import java.util.ArrayList;

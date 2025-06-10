@@ -18,7 +18,7 @@ public class TechCom{
      * @param input a Scanner object used to receive user input
      */
     public TechCom(Scanner input){
-        this.tasks = new Tasks[]{new DevicesCheck(input), new Projector(input), new MissingComponents()};
+        this.tasks = new Tasks[]{new DevicesCheck(input), new Projector(input), new MissingComponents(input)};
     }
 
     /**

@@ -1,6 +1,7 @@
 /**
- * a task where the player answers the student's questions in class
- * the energy cost depends on whether the answer is correct or not
+ * This AnswerQuestion class represents the answer question task and extends the abstract class, Tasks. 
+ * This class contains a method for the answer question task where the player answers the student's questions in class
+ * As well as, a method that changes Mr.Kalisz's energy.
  * @author Yu-Yen Shen
  * @version 1.5
  */
@@ -42,28 +43,28 @@ public class AnswerQuestion extends Tasks{
     int[] correctAnswerIndex = {1, 1, 2, 1, 0}; // Indexes of correct answer
     
 
-    /**
-     * student asking a question and the player selecting an answer
-     * the student's volume will be tested, if not loud enough, he will be asked to repeat until the volume is sufficient
-     * energy cost depending on whether the answer is correct or not
-     * 
+    /** //check with yu-yen if it's okay to remove the latter because its better if its commented into the code i think
+     * This method contains the prompts for user the answer question task
      * @param kalisz the MrKalisz object whose energy will be changed by the task
      */
     public void answerQuestion(MrKalisz kalisz){
-        //randomize questions asked by student using an array of questions and random number
+        //Randomize questions asked by student using an array of questions and random number
         Random num = new Random();
 
         int questionNum = num.nextInt(questionsArr.length);
         int studentVolume = this.student.getVolume();
 
+        //Student asks a question
         DelayText.print("Student asks: " + questionsArr[questionNum],1000);
 
+        //The student's volume will be tested, if not loud enough, they will be asked to repeat until the volume is sufficient
         while (studentVolume <= 4){
             DelayText.print("Say that again?", 1000);
             studentVolume++;
             student.setVolume(studentVolume);
         }
 
+        //The player selects an answer
         DelayText.print("Choose the correct answer: ", 1000);
         for (int i = 0; i < 3; i++) {
             DelayText.print((i + 1)+": " + answerArr[questionNum][i], 1000);
@@ -71,6 +72,7 @@ public class AnswerQuestion extends Tasks{
 
         int playerChoice = input.nextInt();
         
+        //Energy cost depending on whether the answer is correct or not
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
             System.out.println("Correct:");
             energyCost = 5;
@@ -84,7 +86,6 @@ public class AnswerQuestion extends Tasks{
 
     /**
      * Energy change to Mr. Kalisz
-     * 
      * @param kalisz the MrKalisz object whose energy is going to change
      */
     @Override

@@ -1,9 +1,8 @@
 /**
- * It creates a method to use for delaying text in the terminal.
+ * This DelayText class is a utility class that has methods to use for delaying text in the terminal.
  * @author Lily You
  * @version 1.6 2025/05/05
  */
-//Using a utility class because we want every class to be able to access delay text without having to create an instance of the class everytime
 public final class DelayText {
 	/**
 	 * Private constructor to prevent object creation
@@ -14,9 +13,9 @@ public final class DelayText {
 
 	//Googled how to delay text in java - Source: https://mrparkonline.gitbook.io/guide-to-high-school-computer-science/java-essentials/delayed-output-in-java 
 	/**
-	 * This is a method that prints the text and delay it in the terminal
-	 * @param text show the string that is being printed
-	 * @param millis the amount of time the text is being delayed in milli second
+	 * This is a method that prints the text and delays it in the terminal
+	 * @param text the string that is being printed
+	 * @param millis the amount of time the text is being delayed in milliseconds
 	 */
 	public static void print(String text, int millis){
 		try{
@@ -29,9 +28,9 @@ public final class DelayText {
 	}
 
 	/**
-	 * This is a method that print a student object and delay the next output in the terminal
-	 * @param student the student object that is being printed
-	 * @param millis the amount of time the next output is being delayed in milli seconds
+	 * This is a method that prints a student object and delays the next output in the terminal
+	 * @param student the Student object that is being printed
+	 * @param millis the amount of time the next output is being delayed in milliseconds
 	 */
     public static void print(Student student, int millis){
         try{
@@ -44,9 +43,9 @@ public final class DelayText {
     }
 
 	/**
-	 * This method print a device object and delay the next output in the terminal.
-	 * @param device the device object that is being printed.
-	 * @param millisthe the amount of time the next output is being delayed in milliseconds.
+	 * This method prints a device object and delays the next output in the terminal
+	 * @param device the Device object that is being printed
+	 * @param millisthe the amount of time the next output is being delayed in milliseconds
 	 */
 	public static void print(Device device, int millis){
         try{
@@ -57,10 +56,10 @@ public final class DelayText {
 			e.printStackTrace();
 		}
     }
-	
+
 	/**
-	 * This method print a string and delay the next output in the terminal. The next print will continue on the same line.
-	 * @param text The text that is being printed.
+	 * This method prints a string and delays the next output in the terminal. The next print will continue on the same line
+	 * @param text The String of text that is being printed
 	 * @param millis The amount of time that the next out put is being delayed in milliseconds
 	 */
 	public static void printSameLine(String text, int millis){

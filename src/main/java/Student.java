@@ -2,7 +2,7 @@
  * This Student class allows the user to access a student's first name, last name, student number volume and presence of a student and modify a student's volume.
  * This class implements the Comparable interface and is used to sort students by last name.
  * This class contains methods that return the student's name in a readable format, compares two students and checks if two students are equal.
- * @author
+ * @author 
  * @version 1.3
  */
 

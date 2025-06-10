@@ -43,8 +43,8 @@ public class Classroom{
         this.tasks = new Tasks[]{new Attendance(input, fNames, lNames, studentNumbers, presence), new MarkingTest(input), new AnswerQuestion(input, randomStudent)};
     }
     /**
-     * The method that allow the player to do the attendece task???
-     * @param kalisz the object that represeant the players character.
+     * This method allows the player to access the attendance task.
+     * @param kalisz the MrKalisz object that represent the player's character.
      */
     public void attendanceTask(MrKalisz kalisz){
         Attendance attendance = (Attendance) tasks[0];
@@ -52,8 +52,8 @@ public class Classroom{
         attendance.doAttendance(seatingChart, kalisz);
     }
     /**
-     * The method that allow the player to do the marking test task.
-     * @param kalisz the object that represeant the players character.
+     * This method allows the player to access the marking test task.
+     * @param kalisz the MrKalisz object that represent the player's character.
      */
     public void markTestTask(MrKalisz kalisz){
         MarkingTest markingTest = (MarkingTest) tasks[1];
@@ -61,8 +61,8 @@ public class Classroom{
         
     }
     /**
-     * The method that allow the player to access the answerquestion task.
-     * @param kalisz the object that represeant the players character.
+     * This method allows the player to access the answer question task.
+     * @param kalisz the MrKalisz object that represent the player's character.
      */
     public void answerQuestionTask(MrKalisz kalisz){
         AnswerQuestion answerQuestion = (AnswerQuestion) tasks[2];

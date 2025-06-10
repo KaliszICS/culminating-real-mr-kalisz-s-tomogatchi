@@ -9,15 +9,16 @@ import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
     private Scanner input;
+
     /**
-    * This contructor sets the value of the energy cost for the game
+    * Constructs a new MarkingTest object with the variable input and sets the value of the energy cost for the game.
+    * @param input a Scanner object used to retrieve user input
     */
     public MarkingTest(Scanner input){
         this.energyCost = 5;
         this.input = input;
     }
 
-   //Getters and Seetters
    /**
     * A method that returns the input of the player.
     * @return the input of the player
@@ -26,8 +27,7 @@ public class MarkingTest extends Tasks{
         return this.input;
    }
 
-
-   //put these variables whereever you would like
+   //Parallel array of Strings that represent the student paper and correct answers
    String[] paperAnswers = {"D A A D B D C D D B", "C B C A A D C C B D", "A B D B B A D D C B", "B A B D B C C D C A", "C A D D B A A A C B"};
    String[] correctAnswers = {"D A A B D A C C D B", "D C C A A D B C B A", "A C D B A B D D C A", "B C B D B A D D B A", "C A C D B A D A C B"};
    String studentAnswer;
@@ -35,8 +35,9 @@ public class MarkingTest extends Tasks{
    String testAnswerNoSpaces;
    String studentAnswerNoSpaces;
    String paper;
+
    /**
-    * A method that randomly choosen one of the students and tests answers.
+    * A method that randomly chooses one of the students and tests answers.
     * @param paperAnswers the list that contains the papers answers.
     */
    public void answers(String[] paperAnswers){
@@ -47,6 +48,10 @@ public class MarkingTest extends Tasks{
         paper = ASCIIArt.papers(paperNum);
    }
 
+   /**
+    * A method that checks the amount of right answers the student has and returns it
+    * @return int that represnts the amount of right answers the student has
+    */
     public int findRightAnswers(){
         answers(paperAnswers);
         int rightAnswer = 0;
@@ -59,8 +64,9 @@ public class MarkingTest extends Tasks{
         }
         return rightAnswer;
    }
-   /**
-    * The method that ask the player to inpyt the number of the right answers from the students paper and tell the player whether the player were right or wrong.
+
+   /** //check with yaseman if it's okay to remove the latter because its better if its commented into the code i think
+    * This method contains the prompts for user to play the marking test task
     * @param kalisz the object that represeant the character of the player and the energy of the player.
     */
    public void doMarkingTest(MrKalisz kalisz){
@@ -68,9 +74,11 @@ public class MarkingTest extends Tasks{
     DelayText.print("It's time to mark tests. You have 5 seconds to memorize the students answers. Then, use the test's answer to input how many mistakes the students made.", 4500);
     System.out.println(paper);
     DelayText.print("These are the correct answers: " + testAnswer, 500);
+    //Ask the player to input the number of the right answers from the students paper
     DelayText.printSameLine("Input the number of the right student answers: ", 500);
     int num = input.nextInt();
     input.nextLine();
+    //Tell the player whether the player were right or wrong.
         while(num != rightAnswers){
             DelayText.print("Wrong answer", 1000);
             DelayText.printSameLine("Input the number of the right student answers: ", 500);
@@ -79,8 +87,9 @@ public class MarkingTest extends Tasks{
         }
         DelayText.print("Right answer", 1000);
     }
+
     /**
-     * The method that change the energy of the kalisz object.
+     * The method that changes the energy of the MrKalisz object.
      * @parm kalisz the object that represeant the character of the player and the energy of the player. 
      */
      @Override

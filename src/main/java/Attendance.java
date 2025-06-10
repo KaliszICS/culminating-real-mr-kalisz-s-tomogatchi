@@ -1,7 +1,7 @@
 /**
  * This Attendance class represents the doAttendance task and extends the abstract class, Tasks. 
  * This class allows users access the class' first names, last names, student numbers and presence.
- * This class contains methods that create a seating chart, make a sorted and present student list, does the attendance task and changes Mr.Kalisz's energy.
+ * This class contains methods that create a seating chart, make a sorted and present student list, to do the attendance task and changes Mr.Kalisz's energy.
  * @author Lily You
  * @version 1.6
  */
