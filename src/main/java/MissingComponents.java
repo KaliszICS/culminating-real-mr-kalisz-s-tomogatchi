@@ -1,6 +1,9 @@
 /**
- * Javadocs...
+ * This MissingComponents class represents the missing component task and extends the abstract class, Tasks. 
+ * This class allows users to access how many parts there are to check
+ * This class contains methods to do the missing component task and changes Mr.Kalisz's energy.
  * @author Jathav Puvirajan
+ * @version 1.3 2025/06/10
  */
 import java.util.Random;
 import java.util.Scanner;
@@ -9,6 +12,12 @@ public class MissingComponents extends Tasks{
     private String[] parts;
     private String[] problems;
     private int energy;
+
+    /**
+     * Constructs a new MissingComponents object with the variable input and
+     * initializes parts and problems with a new String array and energy cost as 5.
+     * @param input a Scanner object to retrieve user input
+     */
     public MissingComponents(Scanner input){
         this.parts = new String[]{"Graphics Card", "CPU", "RAM", "Power Supply", "Coolant", "Keyboard", "Mouse"};
         this.problems = new String[]{
@@ -23,9 +32,19 @@ public class MissingComponents extends Tasks{
         this.input = input;
         this.energyCost = 5;
     }
+
+    /**
+     * Gets the number of parts to check
+     * @return the int representing the length of parts
+     */
     public int getLength(){
         return this.parts.length;
     }
+
+    /**
+     * This method contains the prompts for the user to play the missing components task
+     * @param kalisz the MrKalisz object whose energy will be affected by the task
+     */
     public void doMissingComponents(MrKalisz kalisz){
         energy = kalisz.getEnergy();
         Random rand = new Random();
@@ -71,6 +90,12 @@ public class MissingComponents extends Tasks{
         }
         DelayText.print("You fixed all the computers! Task complete.", 2000);
     }
+
+    /**
+     * Changes and sets Mr.Kalisz's energy based on his current energy and the energy cost of the task
+     * Updates the variable energy to the most current amount of energy
+     * @param kalisz the MrKalisz object whose energy will be changed
+     */
     @Override
     public void energyChange(MrKalisz kalisz){
         kalisz.setEnergy(kalisz.getEnergy()-energyCost);

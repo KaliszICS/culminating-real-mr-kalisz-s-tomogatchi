@@ -1,9 +1,8 @@
 /**
  * This MrKalisz class allows users to access and modify the energy of Mr.Kalisz.
  * This class contains a method that returns the name in an appropriate format.
- * 
  * @author Lily You
- * @version 1.4
+ * @version 1.4 2025/06/08
  */
 
 public class MrKalisz{

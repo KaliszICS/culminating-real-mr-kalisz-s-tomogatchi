@@ -2,7 +2,7 @@
  * This Device class represents a device that includes the model, serial number and last service year of the device and allows users to access them.
  * This calls contains methods that return the device in a readable format and checks if two devices are equal.
  * @author Lily You
- * @version 1.3
+ * @version 1.3 2025/06/07
  */
 
 public class Device {

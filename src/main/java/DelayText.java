@@ -1,8 +1,9 @@
 /**
  * This DelayText class is a utility class that has methods to use for delaying text in the terminal.
  * @author Lily You
- * @version 1.6 2025/05/05
+ * @version 1.6 2025/06/07
  */
+
 public final class DelayText {
 	/**
 	 * Private constructor to prevent object creation

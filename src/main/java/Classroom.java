@@ -5,8 +5,7 @@
  * @author Yaseman Nikoo
  * @author Yu-Yen Shen
  * @author Lily You
- * @author Jathave Puvirajan
- * @version 1.9 2025/06/11
+ * @version 1.9 2025/06/08
  */
 
 import java.util.Random;

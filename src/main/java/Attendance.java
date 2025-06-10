@@ -3,7 +3,7 @@
  * This class allows users access the class' first names, last names, student numbers and presence.
  * This class contains methods that create a seating chart, make a sorted and present student list, to do the attendance task and changes Mr.Kalisz's energy.
  * @author Lily You
- * @version 1.6
+ * @version 1.6 2025/06/07
  */
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -16,20 +16,20 @@ public class Attendance extends Tasks{
     private Scanner input;
 
     /**
-     * Constructs a new Attendance object with the variables in, firstNames, lastNames, studentNumbers sand presence and initializes the energy cost of this task as 10
+     * Constructs a new Attendance object with the variables input, firstNames, lastNames, studentNumbers sand presence and initializes the energy cost of this task as 10
      * @param in a Scanner object used to recieve user input
      * @param firstNames String array - list of students' first names
      * @param lastNames String array - list of students' last names
      * @param studentNumbers String array - list of students' student numbers
      * @param presence String array - list of students' presence
      */
-    public Attendance(Scanner in, String[] firstNames, String[] lastNames, String[] studentNumbers, String[] presence){
+    public Attendance(Scanner input, String[] firstNames, String[] lastNames, String[] studentNumbers, String[] presence){
         this.firstNames = firstNames;
         this.lastNames = lastNames;
         this.studentNumbers = studentNumbers;
         this.presence = presence;
         this.energyCost = 10;
-        this.input = in;
+        this.input = input;
     }
 
     /**

@@ -1,20 +1,25 @@
 /**
- * This Projector 
+ * This Projector class represents the projector task and extends the abstract class, Tasks. 
+ * This class allows users to access how many things there are to check
+ * This class contains methods to do the check projector task and changes Mr.Kalisz's energy.
+ * @author Jathav Puvirajan
+ * @version 1.3 2025/06/10
  */
 
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Projector extends Tasks{
     private Scanner input;
     private String[] parts;
     private int energy;
+
     public Projector(Scanner input) {
         this.parts = new String[]{"Cable", "Power", "Lens", "Inputs", "Internet"};
         this.input = input;
         this.energyCost = 5;
     }
+
     public int getLength(){
         return this.parts.length;
     }
@@ -24,7 +29,6 @@ public class Projector extends Tasks{
         Random rand = new Random();
         int length = getLength();
         int brokenPartIndex = rand.nextInt(length);
-        //Graphics: just put a broken projector up?
         DelayText.print("The projector is broken! Lets try and fix it.", 1000);
         DelayText.print("Heres a list of parts to check:", 500);
         for(String part : parts){
@@ -39,7 +43,6 @@ public class Projector extends Tasks{
                 if(parts[i].equalsIgnoreCase(userInput)){
                     valid = true;
                     if(i == brokenPartIndex){
-                        //Graphics: Flash checkmark on screen?
                         DelayText.print("The projector has been fixed!",1000);
                         fixed = true;
                         break;
@@ -62,6 +65,13 @@ public class Projector extends Tasks{
         
         
     }
+
+    /**
+     * Changes and sets Mr.Kalisz's energy based on his current energy and the energy cost of the task
+     * Updates the variable energy to the most current amount of energy
+     * @param kalisz the MrKalisz object whose energy will be changed
+     */
+    @Override
     public void energyChange(MrKalisz kalisz){
         kalisz.setEnergy(kalisz.getEnergy()-energyCost);
         energy = kalisz.getEnergy();

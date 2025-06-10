@@ -1,7 +1,7 @@
 /**
  * This ASCIIArt class is a utility class that has methods that provide Strings with ASCII Art that is used throughout the simulator.
  * @author Lily You
- * @version 1.2
+ * @version 1.2 2025/06/09
  */
 
 public final class ASCIIArt {

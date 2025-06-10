@@ -1,14 +1,20 @@
 /**
- * Represent the marking test task. It ask the player to find the number of the right answers in the students answers.
+ * THis MarkingTest class represents the marking test task and extends the abstract class, Tasks.
+ * It ask the player to find the number of the right answers in the students answers.
  * If the player enter the wrong number it will deduct Mr. Kalisz energy
  * @author Yaseman Nikoo
- * @version 1.4 2025/6/09
+ * @version 1.4 2025/06/09
  */
 
 import java.util.Scanner;
 import java.util.Random;
 public class MarkingTest extends Tasks{
    private Scanner input;
+
+   /**
+    * This constructor takes in the variable input and sets the energy cost to 5
+    * @param input
+    */
    public MarkingTest(Scanner input){
     this.input = input;
     this.energyCost = 5;

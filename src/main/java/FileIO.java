@@ -1,6 +1,12 @@
+/**
+ * This FileIO class is a utility class that has methods to use for _________.
+ * @author Lily You
+ * @version 1.1 2025/06/10
+ */
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
 public class FileIO {
 	private static final String winsPath = "winsFile.txt";
 

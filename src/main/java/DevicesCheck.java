@@ -2,7 +2,7 @@
  * This DevicesCheck class represents the device checking task and extends the abstract class, Tasks. 
  * This class contains methods that makes a list of devices to check, a list of 'bad' devices, to do the device checking task and changes Mr.Kalisz's energy.
  * @author Lily You
- * @version 1.5
+ * @version 1.5 2025/06/07
  */
 
 import java.util.ArrayList;
@@ -92,7 +92,7 @@ public class DevicesCheck extends Tasks{
             pw = new PrintWriter(new FileWriter("DevicesOld.txt"));
             boolean notDone = true;
             while(notDone){
-                System.out.print("Enter the serial numbers of the 'bad' computers to remove them, type 'done' when finished: ");
+                System.out.print("Enter the serial numbers of the 'bad' computers to remove them, TYPE 'done' WHEN YOU THINK YOU ARE FINISHED: ");
                 String serialNum = input.nextLine();
                 //Stops prompting the user once they think they are done
                 if(serialNum.equalsIgnoreCase("done")){

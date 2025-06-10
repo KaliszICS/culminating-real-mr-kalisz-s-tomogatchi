@@ -22,7 +22,7 @@ public class TechCom{
     }
 
     /**
-     * Performs the device checking task using a new DevicesCheck object to generate a list of devices to be checked
+     * THis method performs the device checking task by generating a list of devices to be checked
      * @param kalisz the MrKalisz object whose energy will be affected by the task
      */
     public void deviceCheckTask(MrKalisz kalisz){
@@ -32,12 +32,19 @@ public class TechCom{
     }
 
 
-    //jathav please add im too lazy
+    /**
+     * This method performs the projector check task
+     * @param kalisz the MrKalisz object whose energy will be affected by the task
+     */
     public void projectorCheckTask(MrKalisz kalisz){
         Projector projector = (Projector) tasks[1];
         projector.doProjector(kalisz);
     }   
 
+    /**
+     * THis method performs the missing components task
+     * @param kalisz the MrKalisz object whose energy will be affected by the task
+     */
     public void missingComponentTask(MrKalisz kalisz){
         MissingComponents missingComponents = (MissingComponents) tasks[2];
         missingComponents.doMissingComponents(kalisz);

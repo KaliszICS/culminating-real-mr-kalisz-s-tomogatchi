@@ -107,6 +107,7 @@ public class Main {
 					}
 					int taskNum = in.nextInt();
 					in.nextLine();
+					//Determines which task the user wants to do
 					if(taskNum == 1){
 						techcom.deviceCheckTask(kalisz);
 					}
