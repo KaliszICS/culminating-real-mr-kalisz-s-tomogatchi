@@ -74,11 +74,11 @@ public class AnswerQuestion extends Tasks{
         
         //Energy cost depending on whether the answer is correct or not
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
-            System.out.println("Correct:");
+            System.out.println("Correct!");
             energyCost = 5;
             energyChange(kalisz);
         } 
-        if (playerChoice != 1 || playerChoice != 2 || playerChoice != 3) {
+        if (playerChoice != 1 && playerChoice != 2 && playerChoice != 3) {
             System.out.println("The choice is invalid. Please select again.");
             answerQuestion(kalisz);
         }
