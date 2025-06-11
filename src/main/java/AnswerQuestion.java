@@ -69,17 +69,28 @@ public class AnswerQuestion extends Tasks{
         for (int i = 0; i < 3; i++) {
             DelayText.print((i + 1)+": " + answerArr[questionNum][i], 1000);
         }
-
-        int playerChoice = input.nextInt();
         
         //Check for invalid input first
-        if (playerChoice != 1 && playerChoice != 2 && playerChoice != 3) {
-            System.out.println("The choice is invalid. Please try again.");
-            answerQuestion(kalisz);
-            return;
+        boolean validAnswerChosen = false;
+		int playerChoice = 0;
+        try (Scanner in = new Scanner(System.in)) {
+            while(!validAnswerChosen){
+            	String line = in.nextLine().trim();
+            	try {
+            		playerChoice = Integer.parseInt(line);
+            		if (playerChoice >= 1 && playerChoice <= 3) {
+            			validAnswerChosen = true;
+            			} else {
+            				System.out.print("Not a valid input. Please enter a number: ");
+            			}
+            	} 
+                catch (NumberFormatException e) {
+            		System.out.print("Not a valid input. Please enter a number: ");
+                }
+            }
         }
 
-        //Energy cost depending on whether the answer is correct or not
+		//Energy cost depending on whether the answer is correct or not
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
             System.out.println("Correct!");
             energyCost = 5;
