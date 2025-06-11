@@ -7,6 +7,7 @@
  */
 
 import java.util.Scanner;
+import java.io.IOException;
 import java.util.Random;
 public class MarkingTest extends Tasks{
    private Scanner input;
@@ -77,8 +78,18 @@ public class MarkingTest extends Tasks{
     DelayText.print("These are the correct answers: " + testAnswer, 500);
     //Ask the player to input the number of the right answers from the students paper
     DelayText.printSameLine("Input the number of the right student answers: ", 500);
-    int num = input.nextInt();
-    input.nextLine();
+    boolean validinput=false;
+    int num=-1;
+    /*  while(!validinput){
+        if(input.hasNextInt()){
+            validinput=true;
+            num=input.nextInt();
+        }
+        else{
+            DelayText.print("Invalid input. Try again:",500);
+            input.next();
+        }
+    }*/
     //Tell the player whether the player were right or wrong.
         while(num != rightAnswers){
             DelayText.print("Wrong answer", 1000);
