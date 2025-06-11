@@ -12,6 +12,7 @@ public class MissingComponents extends Tasks{
     private String[] parts;
     private String[] problems;
     private int energy;
+    private int numberOfComputers;
 
     /**
      * Constructs a new MissingComponents object with the variable input and
@@ -31,6 +32,7 @@ public class MissingComponents extends Tasks{
         };
         this.input = input;
         this.energyCost = 5;
+        this.numberOfComputers = 3;
     }
 
     /**
@@ -46,34 +48,46 @@ public class MissingComponents extends Tasks{
      * @param kalisz the MrKalisz object whose energy will be affected by the task
      */
     public void doMissingComponents(MrKalisz kalisz){
+
         energy = kalisz.getEnergy();
         Random rand = new Random();
         int length = getLength();
-        DelayText.print("We have 3 non-functioning computers. Let's try and fix them!", 2000);
-        DelayText.print("Heres a list of parts we can fix:", 500);
+        //Print all possible parts
+        DelayText.print("We have " + numberOfComputers + "non-functioning computers. Let's try and fix them!", 2000);
+        DelayText.print("Heres a list of parts we can fix: ", 500);
         for(String part : parts){
             DelayText.print(part, 500);
         }
-        for(int i = 0; i < 3; i++){
+        //Loop 3 times, for 3 computers.
+        for(int i = 0; i < numberOfComputers; i++){
+            //Chooses an index for the broken part randomly. This will be used to accsess the broken part from the parts array, and its corresponding problem message.
             int brokenPartIndex = rand.nextInt(length);
+
             DelayText.print("Broken Computer " + Integer.toString(i+1) + ":", 2000);
             DelayText.print("Problem: "+ this.problems[brokenPartIndex], 2000);
             DelayText.print("Which part should we replace?", 2000);
+
+            //Repeatedly prompts them to pick a part to fix until they get it right
             boolean fixed = false;
             while(!fixed){
+
                 boolean valid = false;
                 String userInput = input.nextLine();
+                //Checks if they chose a valid part, and if that valid part is the broken one.
                 for(int j = 0; (j < length && !valid); j++){
                     String item = parts[j];
                     if(item.equalsIgnoreCase(userInput)){
                         valid = true;
                         if(j == brokenPartIndex){
+                            //Breaks out of the loop and move onto the next computer/next task if they get it right.
                             DelayText.print("You fixed the computer!",1000);
                             fixed = true;
                             break;
                         }else{
+                            //Drains energy and re-prompts user if they choose the wrong part.
                             energyChange(kalisz);
                             System.out.print("That part is not broken!");
+                            //Ends task if they run out of energy.
                             if(energy <= 0){
                                 return;
                             }
@@ -82,6 +96,7 @@ public class MissingComponents extends Tasks{
                         }
                     }
                 }
+                //Re prompts the user without draining energy if they type in an invalid part.
                 if(!valid){ 
                     DelayText.print("Thats not a valid part. Please input a valid part",1000);
                 }

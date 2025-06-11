@@ -47,20 +47,26 @@ public class Main {
 					else{
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
-					int taskNum = in.nextInt();
-					in.nextLine();
-					//Runs the specified task
-					if(taskNum == 1){
-						classroomTasks.attendanceTask(kalisz);
-					}
-					else if(taskNum == 2){ 
-						classroomTasks.markTestTask(kalisz);
-					}
-					else if(taskNum == 3){ 
-						classroomTasks.answerQuestionTask(kalisz);
-					}
-					//If none, continues to the next loop
-					else{
+					//check if it is actually an integer
+					if(in.hasNextInt()){
+						int taskNum = in.nextInt();
+						in.nextLine();
+						//Runs the specified task
+						if(taskNum == 1){
+							classroomTasks.attendanceTask(kalisz);
+						}
+						else if(taskNum == 2){ 
+							classroomTasks.markTestTask(kalisz);
+						}
+						else if(taskNum == 3){ 
+							classroomTasks.answerQuestionTask(kalisz);
+						}
+						//If none, continues to the next loop
+						else{
+							DelayText.print("No task selected.", 2000);
+							continue;
+						}
+					}else{
 						DelayText.print("No task selected.", 2000);
 						continue;
 					}
@@ -99,19 +105,24 @@ public class Main {
 					else{
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
-					int taskNum = in.nextInt();
-					in.nextLine();
-					//Determines which task the user wants to do
-					if(taskNum == 1){
-						techcom.deviceCheckTask(kalisz);
-					}
-					else if(taskNum == 2){
-						techcom.projectorCheckTask(kalisz);
-					}
-					else if(taskNum == 3){ 
-						techcom.missingComponentTask(kalisz);
-					}
-					else{
+					//check if it is actually an integer
+					if(in.hasNextInt()){
+						int taskNum = in.nextInt();
+						in.nextLine();
+						if(taskNum == 1){
+							techcom.deviceCheckTask(kalisz);
+						}
+						else if(taskNum == 2){
+							techcom.projectorCheckTask(kalisz);
+						}
+						else if(taskNum == 3){ 
+							techcom.missingComponentTask(kalisz);
+						}
+						else{
+							DelayText.print("No task selected.", 2000);
+							continue;
+						}
+					}else{
 						DelayText.print("No task selected.", 2000);
 						continue;
 					}
