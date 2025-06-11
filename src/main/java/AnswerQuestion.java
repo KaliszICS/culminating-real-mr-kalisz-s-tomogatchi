@@ -35,7 +35,7 @@ public class AnswerQuestion extends Tasks{
     String[][] answerArr = { // 3 choices of answers for each question
         {"A number.", "Stores and represents information.", "A class."},
         {"Yes.", "No.", "Sometimes."},
-        {"No idea.", "I don't know", "Really young."},
+        {"No idea.", "I don't know.", "Really young."},
         {"No.", "Go ahead.", "Why?"},
         {"12", "6", "24"}
     };
@@ -79,7 +79,7 @@ public class AnswerQuestion extends Tasks{
             energyChange(kalisz);
         } 
         if (playerChoice != 1 && playerChoice != 2 && playerChoice != 3) {
-            System.out.println("The choice is invalid. Please select again.");
+            System.out.println("The choice is invalid. Please try again.");
             answerQuestion(kalisz);
         }
         else {
