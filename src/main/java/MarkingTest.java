@@ -80,7 +80,7 @@ public class MarkingTest extends Tasks{
     DelayText.printSameLine("Input the number of the right student answers: ", 500);
     boolean validinput=false;
     int num=-1;
-    /*  while(!validinput){
+     while(!validinput){
         if(input.hasNextInt()){
             validinput=true;
             num=input.nextInt();
@@ -89,12 +89,22 @@ public class MarkingTest extends Tasks{
             DelayText.print("Invalid input. Try again:",500);
             input.next();
         }
-    }*/
+    }
     //Tell the player whether the player were right or wrong.
         while(num != rightAnswers){
             DelayText.print("Wrong answer", 1000);
             DelayText.printSameLine("Input the number of the right student answers: ", 500);
-            num = input.nextInt();
+            validinput=false;
+             while(!validinput){
+                if(input.hasNextInt()){
+                    validinput=true;
+                    num=input.nextInt();
+                }
+                else{
+                    DelayText.print("Invalid input. Try again:",500);
+                    input.next();
+                }
+             }
             energyChange(kalisz);
         }
         DelayText.print("Right answer", 1000);
