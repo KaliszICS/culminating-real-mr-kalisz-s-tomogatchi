@@ -72,21 +72,23 @@ public class AnswerQuestion extends Tasks{
 
         int playerChoice = input.nextInt();
         
+        //Check for invalid input first
+        if (playerChoice != 1 && playerChoice != 2 && playerChoice != 3) {
+            System.out.println("The choice is invalid. Please try again.");
+            answerQuestion(kalisz);
+            return;
+        }
+
         //Energy cost depending on whether the answer is correct or not
         if (playerChoice - 1 == correctAnswerIndex[questionNum]) {
             System.out.println("Correct!");
             energyCost = 5;
-            energyChange(kalisz);
         } 
-        if (playerChoice != 1 && playerChoice != 2 && playerChoice != 3) {
-            System.out.println("The choice is invalid. Please try again.");
-            answerQuestion(kalisz);
-        }
         else {
             System.out.println("Wrong...you lose more energy.");
             energyCost = 10;
-            energyChange(kalisz);
         }
+        energyChange(kalisz);
     }
 
     /**
