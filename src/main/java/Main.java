@@ -16,7 +16,7 @@ public class Main {
 			if(!playAgain){
 				DelayText.print("Welcome to Mr.Kalisz Simulator!", 2000);
 				if(numOfWins == 1){
-					DelayText.print("You have " + numOfWins + " win!", 2000); //shouldnt this be said either way though... jathav fix
+					DelayText.print("You have " + numOfWins + " win!", 2000); 
 				}else{
 					DelayText.print("You have " + numOfWins + " wins!", 2000);
 				}
@@ -47,28 +47,30 @@ public class Main {
 					else{
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
-					//check if it is actually an integer
-					if(in.hasNextInt()){
-						int taskNum = in.nextInt();
-						in.nextLine();
-						//Runs the specified task
-						if(taskNum == 1){
-							classroomTasks.attendanceTask(kalisz);
+					//check if it is a valid input
+					boolean validTaskChosen = false;
+					int taskNum = 0;
+					while(!validTaskChosen){
+						String line = in.nextLine();
+						try {
+							taskNum = Integer.parseInt(line);
+							if (taskNum >= 1 && taskNum <= 3) {
+								validTaskChosen = true;
+							} else {
+								System.out.print("Not a valid input. Please input a valid input: ");
+							}
+						} catch (NumberFormatException e) {
+							System.out.print("Not a valid input. Please input a valid input: ");
 						}
-						else if(taskNum == 2){ 
-							classroomTasks.markTestTask(kalisz);
-						}
-						else if(taskNum == 3){ 
-							classroomTasks.answerQuestionTask(kalisz);
-						}
-						//If none, continues to the next loop
-						else{
-							DelayText.print("No task selected.", 2000);
-							continue;
-						}
-					}else{
-						DelayText.print("No task selected.", 2000);
-						continue;
+					}
+					if(taskNum == 1){
+						classroomTasks.attendanceTask(kalisz);
+					}
+					else if(taskNum == 2){ 
+						classroomTasks.markTestTask(kalisz);
+					}
+					else if(taskNum == 3){ 
+						classroomTasks.answerQuestionTask(kalisz);
 					}
 					//Checks if the energy is 0, you have lost the game
 					if(kalisz.getEnergy() <= 0){
@@ -105,26 +107,30 @@ public class Main {
 					else{
 						System.out.print("What's the second task you want to do? Enter the number: ");
 					}
-					//check if it is actually an integer
-					if(in.hasNextInt()){
-						int taskNum = in.nextInt();
-						in.nextLine();
-						if(taskNum == 1){
-							techcom.deviceCheckTask(kalisz);
+					//check if it is a valid input
+					boolean validTaskChosen = false;
+					int taskNum = 0;
+					while(!validTaskChosen){
+						String line = in.nextLine();
+						try {
+							taskNum = Integer.parseInt(line);
+							if (taskNum >= 1 && taskNum <= 3) {
+								validTaskChosen = true;
+							} else {
+								System.out.print("Not a valid input. Please input a valid input: ");
+							}
+						} catch (NumberFormatException e) {
+							System.out.print("Not a valid input. Please input a valid input: ");
 						}
-						else if(taskNum == 2){
+					}
+					if(taskNum == 1){
+						techcom.deviceCheckTask(kalisz);
+					}
+					else if(taskNum == 2){
 							techcom.projectorCheckTask(kalisz);
-						}
-						else if(taskNum == 3){ 
-							techcom.missingComponentTask(kalisz);
-						}
-						else{
-							DelayText.print("No task selected.", 2000);
-							continue;
-						}
-					}else{
-						DelayText.print("No task selected.", 2000);
-						continue;
+					}
+					else if(taskNum == 3){ 
+						techcom.missingComponentTask(kalisz);
 					}
 					if(kalisz.getEnergy() <= 0){
 						DelayText.print("\nEnergy is 0, you have lost the game!", 2000);
