@@ -1,0 +1,6 @@
+Is task an abstract class? if so label it.
+You have a lot of tasks that associate with MrKalisz class but the class itself doesn't really seem to do anything.  Are those calls necessary?
+TechCom has a composition arrow withTask but does not contain a Task instance variable.
+Same is true almost all composition arrows.
+
+85

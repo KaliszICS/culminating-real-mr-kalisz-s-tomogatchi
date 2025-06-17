@@ -1,0 +1,16 @@
+lastServicedYear should be seperate words, not the variable in your code.
+Prompt says before 2019 but mode works for 2019 or earlier
+Should tasks be repeatable??
+Why should you choose higher energy tasks?
+Second task prompt is using input from events
+Test followed by a question crashes the code in its second phase.
+Game should update energy as you go. You can get stuck in a task indefinitely with wrong answers even if out of energy
+Task should be an interface.
+Scanner could be in a utility class so that it can be used anywhere instead of being passed into everything.  This would also allow you to choose your tasks using polymorphism if they all implement and override their task isntead of needing lots of if statments.
+
+
+K(30%): 100
+I(30%): 85
+C(10%): 100
+A(30%): 90
+92.5
